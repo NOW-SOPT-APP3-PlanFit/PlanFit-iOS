@@ -21,6 +21,10 @@ class WorkoutView: UIView {
     
     private let currentTimePlayImage = UIImageView()
     
+    private lazy var breakTimerButton = UIButton()
+    
+    private lazy var completeSetButton = UIButton()
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -60,10 +64,25 @@ private extension WorkoutView {
         currentTimePlayImage.do {
             $0.image = UIImage(resource: .play)
         }
+        
+        breakTimerButton.do {
+            $0.setTitle("휴식 타이머", font: .subtitle01, titleColor: .mainGreen)
+            $0.backgroundColor = .gray05
+            $0.layer.cornerRadius = 15
+        }
+        
+        completeSetButton.do {
+            $0.setTitle("1 세트 완료", font: .subtitle01, titleColor: .gray10)
+            $0.backgroundColor = .mainGreen
+            $0.layer.cornerRadius = 15
+        }
+        
     }
     
     func setViewHierarchy() {
         currentTimeView.addSubviews(currentTimeOnAirDot, currentTimeLabel, currentTimePlayImage)
+        
+        addSubviews(breakTimerButton, completeSetButton)
     }
     
     func setAutoLayout() {
@@ -88,6 +107,20 @@ private extension WorkoutView {
             $0.trailing.equalToSuperview().offset(-11)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
+        }
+        
+        breakTimerButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(17)
+            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.width.equalTo(123)
+            $0.height.equalTo(56)
+        }
+        
+        completeSetButton.snp.makeConstraints {
+            $0.leading.equalTo(breakTimerButton.snp.trailing).offset(6)
+            $0.trailing.equalToSuperview().offset(-18)
+            $0.bottom.equalTo(safeAreaLayoutGuide)
+            $0.height.equalTo(56)
         }
     }
 }
