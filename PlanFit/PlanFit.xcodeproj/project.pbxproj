@@ -20,6 +20,9 @@
 		DE8805C02BF362A700283B48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BF2BF362A700283B48 /* UIView+.swift */; };
 		DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C12BF362DA00283B48 /* UIStackView+.swift */; };
 		DE8805C42BF3644C00283B48 /* PlanFitColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */; };
+		DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */; };
+		DE8805C92BF3670D00283B48 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C82BF3670D00283B48 /* Screen.swift */; };
+		DE8805CB2BF3676000283B48 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805CA2BF3676000283B48 /* Then.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		DE8805BF2BF362A700283B48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DE8805C12BF362DA00283B48 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlanFitColor.xcassets; sourceTree = "<group>"; };
+		DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
+		DE8805C82BF3670D00283B48 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		DE8805CA2BF3676000283B48 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8805B22BF3609A00283B48 /* Extension */,
+				DE8805C52BF366E000283B48 /* Utils */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -126,6 +133,16 @@
 				DE8805C12BF362DA00283B48 /* UIStackView+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE8805C52BF366E000283B48 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */,
+				DE8805C82BF3670D00283B48 /* Screen.swift */,
+				DE8805CA2BF3676000283B48 /* Then.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,15 +217,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */,
+				DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */,
 				DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */,
 				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
 				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
+				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
 				DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */,
+				DE8805C92BF3670D00283B48 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
