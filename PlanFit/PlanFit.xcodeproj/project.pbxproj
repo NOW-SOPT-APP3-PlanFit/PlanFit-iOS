@@ -137,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8805B22BF3609A00283B48 /* Extension */,
-				DE8805C52BF366E000283B48 /* Utils */,
+				DE8805C52BF366E000283B48 /* Util */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -167,14 +167,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		DE8805C52BF366E000283B48 /* Utils */ = {
+		DE8805C52BF366E000283B48 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */,
 				DE8805C82BF3670D00283B48 /* Screen.swift */,
 				DE8805CA2BF3676000283B48 /* Then.swift */,
 			);
-			path = Utils;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		DE8805DB2BF36AD200283B48 /* Home */ = {
