@@ -5,4 +5,8 @@
 //  Created by 김진웅 on 5/14/24.
 //
 
-import Foundation
+import UIKit
+
+class WorkoutView: UIView {
+    
+}
