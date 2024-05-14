@@ -12,6 +12,13 @@
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
 		DE8805A42BF3595F00283B48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8805A32BF3595F00283B48 /* Assets.xcassets */; };
 		DE8805A72BF3595F00283B48 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE8805A62BF3595F00283B48 /* Base */; };
+		DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805B32BF360A500283B48 /* UIFont+.swift */; };
+		DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805B62BF360E800283B48 /* NSAttributedString+.swift */; };
+		DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805B92BF3611600283B48 /* UILabel+.swift */; };
+		DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BB2BF3612700283B48 /* UIButton+.swift */; };
+		DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BD2BF3619300283B48 /* UITextField+.swift */; };
+		DE8805C02BF362A700283B48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BF2BF362A700283B48 /* UIView+.swift */; };
+		DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C12BF362DA00283B48 /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		DE8805A32BF3595F00283B48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE8805A62BF3595F00283B48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE8805A82BF3595F00283B48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8805B32BF360A500283B48 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		DE8805B62BF360E800283B48 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
+		DE8805B92BF3611600283B48 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		DE8805BB2BF3612700283B48 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		DE8805BD2BF3619300283B48 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		DE8805BF2BF362A700283B48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		DE8805C12BF362DA00283B48 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +99,7 @@
 		DE8805B02BF3599600283B48 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DE8805B22BF3609A00283B48 /* Extension */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -94,6 +109,20 @@
 			children = (
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DE8805B22BF3609A00283B48 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805B32BF360A500283B48 /* UIFont+.swift */,
+				DE8805B62BF360E800283B48 /* NSAttributedString+.swift */,
+				DE8805B92BF3611600283B48 /* UILabel+.swift */,
+				DE8805BB2BF3612700283B48 /* UIButton+.swift */,
+				DE8805BD2BF3619300283B48 /* UITextField+.swift */,
+				DE8805BF2BF362A700283B48 /* UIView+.swift */,
+				DE8805C12BF362DA00283B48 /* UIStackView+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,9 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */,
+				DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */,
+				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
+				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
+				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
+				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
+				DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
