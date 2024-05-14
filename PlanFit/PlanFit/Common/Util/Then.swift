@@ -27,3 +27,5 @@ extension Then where Self: AnyObject {
         return self
     }
 }
+
+extension NSObject: Then {}
