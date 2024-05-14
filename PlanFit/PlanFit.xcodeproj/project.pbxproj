@@ -19,6 +19,7 @@
 		DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BD2BF3619300283B48 /* UITextField+.swift */; };
 		DE8805C02BF362A700283B48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BF2BF362A700283B48 /* UIView+.swift */; };
 		DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C12BF362DA00283B48 /* UIStackView+.swift */; };
+		DE8805C42BF3644C00283B48 /* PlanFitColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DE8805BD2BF3619300283B48 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		DE8805BF2BF362A700283B48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DE8805C12BF362DA00283B48 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
+		DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlanFitColor.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8805A32BF3595F00283B48 /* Assets.xcassets */,
+				DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */,
 				DE8805A52BF3595F00283B48 /* LaunchScreen.storyboard */,
 				DE8805A82BF3595F00283B48 /* Info.plist */,
 			);
@@ -183,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8805C42BF3644C00283B48 /* PlanFitColor.xcassets in Resources */,
 				DE8805A42BF3595F00283B48 /* Assets.xcassets in Resources */,
 				DE8805A72BF3595F00283B48 /* Base in Resources */,
 			);
