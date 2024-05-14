@@ -108,7 +108,6 @@
 				DE8805B12BF3599F00283B48 /* Presentation */,
 				DE8805B02BF3599600283B48 /* Common */,
 				DE8805AF2BF3597E00283B48 /* Resource */,
-				DE88059E2BF3595E00283B48 /* ViewController.swift */,
 			);
 			path = PlanFit;
 			sourceTree = "<group>";
@@ -125,6 +124,7 @@
 		DE8805AF2BF3597E00283B48 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DE88059E2BF3595E00283B48 /* ViewController.swift */,
 				DE8805A32BF3595F00283B48 /* Assets.xcassets */,
 				DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */,
 				DE8805A52BF3595F00283B48 /* LaunchScreen.storyboard */,
