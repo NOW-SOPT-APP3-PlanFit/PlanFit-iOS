@@ -15,6 +15,8 @@ class WorkoutView: UIView {
     
     let currentTimeView = UIView()
     
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    
     private let currentTimeOnAirDot = UIImageView()
     
     private let currentTimeLabel = UILabel()
@@ -65,6 +67,11 @@ private extension WorkoutView {
             $0.image = UIImage(resource: .play)
         }
         
+        collectionView.do {
+            $0.backgroundColor = .gray08BG
+            $0.register(WorkoutImageCell.self, forCellWithReuseIdentifier: WorkoutImageCell.reuseIdentifier)
+        }
+        
         breakTimerButton.do {
             $0.setTitle("휴식 타이머", font: .subtitle01, titleColor: .mainGreen)
             $0.backgroundColor = .gray05
@@ -82,7 +89,7 @@ private extension WorkoutView {
     func setViewHierarchy() {
         currentTimeView.addSubviews(currentTimeOnAirDot, currentTimeLabel, currentTimePlayImage)
         
-        addSubviews(breakTimerButton, completeSetButton)
+        addSubviews(collectionView, breakTimerButton, completeSetButton)
     }
     
     func setAutoLayout() {
@@ -108,6 +115,8 @@ private extension WorkoutView {
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
+        
+        collectionView.snp.makeConstraints { $0.edges.equalTo(safeAreaLayoutGuide) }
         
         breakTimerButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(17)
