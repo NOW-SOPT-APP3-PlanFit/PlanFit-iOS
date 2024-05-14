@@ -29,6 +29,14 @@
 		DE8805D52BF3691400283B48 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D42BF3691400283B48 /* Moya */; };
 		DE8805D72BF3691400283B48 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D62BF3691400283B48 /* ReactiveMoya */; };
 		DE8805D92BF3691400283B48 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D82BF3691400283B48 /* RxMoya */; };
+		DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */; };
+		DE8805E52BF36B5500283B48 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E42BF36B5500283B48 /* HomeView.swift */; };
+		DE8805E82BF36B7800283B48 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */; };
+		DE8805EB2BF36B8900283B48 /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */; };
+		DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */; };
+		DE8805F12BF36BA400283B48 /* WarmUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805F02BF36BA400283B48 /* WarmUpView.swift */; };
+		DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805F42BF36BBF00283B48 /* WorkoutViewController.swift */; };
+		DE8805F72BF36BC800283B48 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805F62BF36BC800283B48 /* WorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +58,14 @@
 		DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		DE8805C82BF3670D00283B48 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		DE8805CA2BF3676000283B48 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DE8805E42BF36B5500283B48 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
+		DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
+		DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmUpViewController.swift; sourceTree = "<group>"; };
+		DE8805F02BF36BA400283B48 /* WarmUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmUpView.swift; sourceTree = "<group>"; };
+		DE8805F42BF36BBF00283B48 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		DE8805F62BF36BC800283B48 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +145,10 @@
 		DE8805B12BF3599F00283B48 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE8805DB2BF36AD200283B48 /* Home */,
+				DE8805DC2BF36ADA00283B48 /* WorkoutList */,
+				DE8805DD2BF36AED00283B48 /* WarmUp */,
+				DE8805DE2BF36AF500283B48 /* Workout */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -155,6 +175,106 @@
 				DE8805CA2BF3676000283B48 /* Then.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE8805DB2BF36AD200283B48 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805E22BF36B4400283B48 /* View */,
+				DE8805E12BF36B3E00283B48 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DE8805DC2BF36ADA00283B48 /* WorkoutList */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805E92BF36B8000283B48 /* View */,
+				DE8805E62BF36B6800283B48 /* Controller */,
+			);
+			path = WorkoutList;
+			sourceTree = "<group>";
+		};
+		DE8805DD2BF36AED00283B48 /* WarmUp */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805ED2BF36B9300283B48 /* View */,
+				DE8805EC2BF36B8E00283B48 /* Controller */,
+			);
+			path = WarmUp;
+			sourceTree = "<group>";
+		};
+		DE8805DE2BF36AF500283B48 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805F32BF36BB700283B48 /* View */,
+				DE8805F22BF36BB100283B48 /* Controller */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		DE8805E12BF36B3E00283B48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE8805E22BF36B4400283B48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805E42BF36B5500283B48 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE8805E62BF36B6800283B48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE8805E92BF36B8000283B48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE8805EC2BF36B8E00283B48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE8805ED2BF36B9300283B48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805F02BF36BA400283B48 /* WarmUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE8805F22BF36BB100283B48 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805F42BF36BBF00283B48 /* WorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DE8805F32BF36BB700283B48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE8805F62BF36BC800283B48 /* WorkoutView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,12 +360,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8805EB2BF36B8900283B48 /* WorkoutListView.swift in Sources */,
+				DE8805E82BF36B7800283B48 /* WorkoutListViewController.swift in Sources */,
 				DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */,
 				DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */,
 				DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */,
+				DE8805E52BF36B5500283B48 /* HomeView.swift in Sources */,
 				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
+				DE8805F72BF36BC800283B48 /* WorkoutView.swift in Sources */,
 				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
+				DE8805F12BF36BA400283B48 /* WarmUpView.swift in Sources */,
+				DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */,
+				DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
+				DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
