@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */; };
+		A3785BBC2BF4E21F00CB9C03 /* WorkoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
 		DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059C2BF3595E00283B48 /* SceneDelegate.swift */; };
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewCell.swift; sourceTree = "<group>"; };
+		A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListModel.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88059A2BF3595E00283B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88059C2BF3595E00283B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */,
+				A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */,
+				A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,10 +380,12 @@
 				DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
 				DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */,
+				A3785BBC2BF4E21F00CB9C03 /* WorkoutListModel.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
+				A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
 				DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */,
 				DE8805C92BF3670D00283B48 /* Screen.swift in Sources */,
