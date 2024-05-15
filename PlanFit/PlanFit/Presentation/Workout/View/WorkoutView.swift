@@ -70,6 +70,9 @@ private extension WorkoutView {
         collectionView.do {
             $0.backgroundColor = .gray08BG
             $0.register(WorkoutImageCell.self, forCellWithReuseIdentifier: WorkoutImageCell.reuseIdentifier)
+            $0.register(WorkoutImageHeader.self,
+                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                        withReuseIdentifier: WorkoutImageHeader.reuseIdentifier)
         }
         
         breakTimerButton.do {

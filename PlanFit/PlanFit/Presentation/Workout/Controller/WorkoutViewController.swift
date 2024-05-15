@@ -48,9 +48,9 @@ class WorkoutViewController: UIViewController {
         )
         
         let ellipsisItem = UIBarButtonItem(image: ellipsisImage,
-                                            style: .plain,
-                                            target: self,
-                                            action: nil
+                                           style: .plain,
+                                           target: self,
+                                           action: nil
         )
         
         navigationItem.titleView = rootView.currentTimeView
@@ -72,7 +72,40 @@ class WorkoutViewController: UIViewController {
             default:
                 return nil
             }
-        })
+        }
+        )
+        
+        dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+            guard let sectionLayoutKind = Section(rawValue: indexPath.section) else { return UICollectionReusableView() }
+            
+            switch kind {
+            case UICollectionView.elementKindSectionHeader:
+                
+                switch sectionLayoutKind {
+                case .WorkOutImage:
+                    guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                           withReuseIdentifier: WorkoutImageHeader.reuseIdentifier,
+                                                                                           for: indexPath)
+                            as? WorkoutImageHeader
+                    else {
+                        return UICollectionReusableView()
+                    }
+                    return headerView
+                    
+                case .SetVolume:
+                    return UICollectionReusableView()
+                }
+                
+            case UICollectionView.elementKindSectionFooter:
+                
+                switch sectionLayoutKind {
+                default:
+                    return UICollectionReusableView()
+                }
+            default:
+                return UICollectionReusableView()
+            }
+        }
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.WorkOutImage, .SetVolume])
@@ -98,6 +131,13 @@ class WorkoutViewController: UIViewController {
                 
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 31, bottom: 0, trailing: 32)
+                
+                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                        heightDimension: .absolute(65))
+                let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
+                                                                         elementKind: UICollectionView.elementKindSectionHeader,
+                                                                         alignment: .top)
+                section.boundarySupplementaryItems = [header]
                 
                 return section
                 
