@@ -68,6 +68,7 @@ private extension WorkoutView {
         }
         
         collectionView.do {
+            $0.showsVerticalScrollIndicator = false
             $0.backgroundColor = .gray08BG
             $0.register(WorkoutImageCell.self, forCellWithReuseIdentifier: WorkoutImageCell.reuseIdentifier)
             $0.register(WorkoutImageHeader.self,
@@ -76,6 +77,7 @@ private extension WorkoutView {
             $0.register(WorkoutImageFooter.self,
                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                         withReuseIdentifier: WorkoutImageFooter.reuseIdentifier)
+            $0.register(WorkoutSetCell.self, forCellWithReuseIdentifier: WorkoutSetCell.reuseIdentifier)
         }
         
         breakTimerButton.do {
@@ -122,7 +124,10 @@ private extension WorkoutView {
             $0.width.height.equalTo(16)
         }
         
-        collectionView.snp.makeConstraints { $0.edges.equalTo(safeAreaLayoutGuide) }
+        collectionView.snp.makeConstraints {
+            $0.top.leading.trailing.equalTo(safeAreaLayoutGuide)
+            $0.bottom.equalTo(breakTimerButton.snp.top)
+        }
         
         breakTimerButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(17)

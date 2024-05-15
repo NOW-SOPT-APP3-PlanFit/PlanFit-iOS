@@ -23,6 +23,8 @@ class WorkoutViewController: UIViewController {
     
     private let workoutImageData = WorkoutImageData.list
     
+    private let setVolumeList = SetVolume.list
+    
     // MARK: - View Life Cycle
     
     override func loadView() {
@@ -55,7 +57,24 @@ class WorkoutViewController: UIViewController {
         
         navigationItem.titleView = rootView.currentTimeView
         navigationItem.rightBarButtonItems = [ellipsisItem, headphoneItem]
+        
+        navigationBarColor()
     }
+    
+    private func navigationBarColor() {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .gray08BG
+            navigationController?.navigationBar.standardAppearance = appearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        } else {
+            navigationController?.navigationBar.isTranslucent = false
+            navigationController?.navigationBar.barTintColor = .gray08BG
+        }
+    }
+    
+    // MARK: - CollectionView Setting
     
     private func configureCollectionView() {
         dataSource = UICollectionViewDiffableDataSource<Section, AnyHashable>(collectionView: rootView.collectionView, cellProvider: { collectionView, indexPath, item in
@@ -64,13 +83,24 @@ class WorkoutViewController: UIViewController {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutImageCell.reuseIdentifier,
                                                                     for: indexPath) as? WorkoutImageCell
                 else {
-                    return nil
+                    return UICollectionViewCell()
                 }
                 
                 cell.dataBind(workoutImage)
                 return cell
+                
+            case let setVolume as SetVolume:
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WorkoutSetCell.reuseIdentifier,
+                                                                    for: indexPath) as? WorkoutSetCell
+                else {
+                    return UICollectionViewCell()
+                }
+                
+                cell.dataBind(setData: setVolume, setNum: indexPath.item)
+                return cell
+                
             default:
-                return nil
+                return UICollectionViewCell()
             }
         }
         )
@@ -120,6 +150,7 @@ class WorkoutViewController: UIViewController {
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.WorkOutImage, .SetVolume])
         snapshot.appendItems(workoutImageData, toSection: .WorkOutImage)
+        snapshot.appendItems(setVolumeList, toSection: .SetVolume)
         dataSource.apply(snapshot)
         
         rootView.collectionView.collectionViewLayout = setLayout()
@@ -166,6 +197,8 @@ class WorkoutViewController: UIViewController {
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+                section.interGroupSpacing = 8
                 
                 return section
             }

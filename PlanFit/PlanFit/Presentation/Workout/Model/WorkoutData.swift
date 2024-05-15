@@ -12,12 +12,23 @@ struct WorkoutImageData: Hashable {
 }
 
 struct SetVolume: Hashable {
-    let weight: String
-    let number: String
+    let weight: Int
+    let repsNum: Int
+    let uuid = UUID()
 }
 
 extension WorkoutImageData {
     static let list = [
         WorkoutImageData(workoutImage: UIImage(resource: .latpulldown))
+    ]
+}
+
+extension SetVolume{
+    static let list = [
+        SetVolume(weight: 8, repsNum: 15),
+        SetVolume(weight: 8, repsNum: 15),
+        SetVolume(weight: 8, repsNum: 15),
+        SetVolume(weight: 8, repsNum: 15),
+        SetVolume(weight: 8, repsNum: 15)
     ]
 }
