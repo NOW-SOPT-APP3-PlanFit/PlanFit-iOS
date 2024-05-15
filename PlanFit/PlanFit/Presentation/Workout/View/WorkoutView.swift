@@ -78,6 +78,9 @@ private extension WorkoutView {
                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                         withReuseIdentifier: WorkoutImageFooter.reuseIdentifier)
             $0.register(WorkoutSetCell.self, forCellWithReuseIdentifier: WorkoutSetCell.reuseIdentifier)
+            $0.register(WorkoutSetFooter.self, 
+                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                        withReuseIdentifier: WorkoutSetFooter.reuseIdentifier)
         }
         
         breakTimerButton.do {

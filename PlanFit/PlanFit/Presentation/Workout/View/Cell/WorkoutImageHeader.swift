@@ -47,7 +47,7 @@ class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
 private extension WorkoutImageHeader {
     func setUI() {
         workoutOrder.do {
-            $0.setText(" 1/6 ", font: .caption03, color: .gray02)
+            $0.setText(" 1 / 6 ", font: .caption03, color: .gray02)
             $0.backgroundColor = .gray07
         }
         

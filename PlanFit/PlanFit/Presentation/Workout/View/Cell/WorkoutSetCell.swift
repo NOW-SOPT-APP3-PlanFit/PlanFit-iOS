@@ -79,7 +79,8 @@ private extension WorkoutSetCell {
         
         slash.snp.makeConstraints {
             $0.leading.equalTo(kgLabel.snp.trailing).offset(35)
-            $0.centerY.equalToSuperview().offset(2)
+            $0.centerY.equalToSuperview().offset(1)
+            $0.width.height.equalTo(16)
         }
         
         repsNum.snp.makeConstraints {

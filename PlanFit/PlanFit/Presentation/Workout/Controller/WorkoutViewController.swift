@@ -139,8 +139,15 @@ class WorkoutViewController: UIViewController {
                     }
                     return footerView
                     
-                default:
-                    return UICollectionReusableView()
+                case .SetVolume:
+                    guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                           withReuseIdentifier: WorkoutSetFooter.reuseIdentifier,
+                                                                                           for: indexPath)
+                            as? WorkoutSetFooter
+                    else {
+                        return UICollectionReusableView()
+                    }
+                    return footerView
                 }
             default:
                 return UICollectionReusableView()
@@ -199,6 +206,13 @@ class WorkoutViewController: UIViewController {
                 let section = NSCollectionLayoutSection(group: group)
                 section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
                 section.interGroupSpacing = 8
+                
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                        heightDimension: .absolute(165))
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize,
+                                                                         elementKind: UICollectionView.elementKindSectionFooter,
+                                                                         alignment: .bottom)
+                section.boundarySupplementaryItems = [footer]
                 
                 return section
             }
