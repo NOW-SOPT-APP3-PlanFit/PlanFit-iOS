@@ -46,11 +46,17 @@ private extension WorkoutSetCell {
         
         setCount.do { $0.setText("", font: .body01B, color: .gray04) }
         
-        weight.do { $0.setText("", font: .subtitle01, color: .gray04) }
+        weight.do { 
+            $0.setText("", font: .subtitle01, color: .gray04)
+            $0.textAlignment = .right
+        }
         
         kgLabel.do { $0.setText("kg", font: .subtitle02, color: .gray04) }
         
-        repsNum.do { $0.setText("", font: .subtitle01, color: .gray04) }
+        repsNum.do {
+            $0.setText("", font: .subtitle01, color: .gray04)
+            $0.textAlignment = .right
+        }
         
         repsLabel.do { $0.setText("회", font: .subtitle02, color: .gray04) }
         
@@ -68,13 +74,15 @@ private extension WorkoutSetCell {
         }
         
         weight.snp.makeConstraints {
-            $0.leading.equalTo(setCount.snp.trailing).offset(100)
+            $0.leading.equalTo(setCount.snp.trailing).offset(48)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(35)
         }
         
         kgLabel.snp.makeConstraints {
             $0.leading.equalTo(weight.snp.trailing).offset(0.5)
             $0.bottom.equalTo(weight).offset(1.5)
+            $0.width.equalTo(16)
         }
         
         slash.snp.makeConstraints {
@@ -84,14 +92,16 @@ private extension WorkoutSetCell {
         }
         
         repsNum.snp.makeConstraints {
-            $0.leading.equalTo(slash.snp.trailing).offset(35)
+            $0.leading.equalTo(slash.snp.trailing).offset(17)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(35)
         }
         
         repsLabel.snp.makeConstraints {
             $0.leading.equalTo(repsNum.snp.trailing).offset(0.5)
             $0.trailing.equalToSuperview().offset(-33)
             $0.bottom.equalTo(repsNum).offset(1)
+            $0.width.equalTo(14)
         }
     }
 }

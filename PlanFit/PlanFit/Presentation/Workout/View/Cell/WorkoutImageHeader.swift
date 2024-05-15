@@ -13,7 +13,9 @@ class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - UI Component
     
-    private let workoutOrder = UILabel()
+    private let workoutOrderLabel = UILabel()
+    
+    private let workoutOrderView = UIView()
     
     private let currentWorkout = UILabel()
     
@@ -46,9 +48,11 @@ class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
 
 private extension WorkoutImageHeader {
     func setUI() {
-        workoutOrder.do {
-            $0.setText(" 1 / 6 ", font: .caption03, color: .gray02)
+        workoutOrderLabel.do { $0.setText("1 / 6", font: .caption03, color: .gray02) }
+        
+        workoutOrderView.do {
             $0.backgroundColor = .gray07
+            $0.layer.cornerRadius = 5
         }
         
         currentWorkout.do { $0.setText("랫 풀다운", font: .head04, color: .gray01) }
@@ -73,7 +77,9 @@ private extension WorkoutImageHeader {
     }
     
     func setViewHierarchy() {
-        currentWorkoutStackView.addArrangedSubviews(workoutOrder, currentWorkout)
+        workoutOrderView.addSubview(workoutOrderLabel)
+        
+        currentWorkoutStackView.addArrangedSubviews(workoutOrderView, currentWorkout)
         
         nextWorkoutStackView.addArrangedSubviews(nextWorkoutLabel, nextWorkoutName)
         
@@ -81,6 +87,13 @@ private extension WorkoutImageHeader {
     }
     
     func setAutoLayout() {
+        workoutOrderLabel.snp.makeConstraints { $0.center.equalToSuperview() }
+        
+        workoutOrderView.snp.makeConstraints {
+            $0.width.equalTo(32)
+            $0.height.equalTo(21)
+        }
+        
         currentWorkoutStackView.snp.makeConstraints {
             $0.top.leading.bottom.equalToSuperview()
         }
