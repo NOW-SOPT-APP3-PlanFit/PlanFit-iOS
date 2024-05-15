@@ -10,7 +10,7 @@
 |🔖 김진웅</br>[@JinUng41](https://github.com/JinUng41)|🔖 왕정빈</br>[@kingjeongkong](https://github.com/kingjeongkong)|🔖 김수연</br>[@mmaybei](https://github.com/mmaybei)|
 |:---:|:---:|:---:|
 |<img src = "https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/144984293/df15f3cf-5bbc-497d-87c7-f6efeb37a9c7" width ="250">|<img src = "https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/144984293/1179e13a-72f3-44dd-a82d-58263b5283e4" width ="250">|<img src = "https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/144984293/5eff0e32-5c6e-4fa8-a904-3a57105badc5" width ="250">|
-|`홈 화면 뷰`</br>`웜업 스트레칭 뷰`|`추천 운동 리스트 뷰`|`근력 운동 뷰`|
+|`홈 화면 뷰`</br>`웜업 스트레칭 뷰`|`근력 운동 뷰`|`추천 운동 리스트 뷰`|
 </br>
 
 
