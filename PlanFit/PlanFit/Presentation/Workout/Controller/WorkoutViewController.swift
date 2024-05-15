@@ -99,6 +99,16 @@ class WorkoutViewController: UIViewController {
             case UICollectionView.elementKindSectionFooter:
                 
                 switch sectionLayoutKind {
+                case .WorkOutImage:
+                    guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                           withReuseIdentifier: WorkoutImageFooter.reuseIdentifier,
+                                                                                           for: indexPath)
+                            as? WorkoutImageFooter
+                    else {
+                        return UICollectionReusableView()
+                    }
+                    return footerView
+                    
                 default:
                     return UICollectionReusableView()
                 }
@@ -134,10 +144,15 @@ class WorkoutViewController: UIViewController {
                 
                 let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                         heightDimension: .absolute(65))
+                let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                        heightDimension: .absolute(20))
                 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
                                                                          elementKind: UICollectionView.elementKindSectionHeader,
                                                                          alignment: .top)
-                section.boundarySupplementaryItems = [header]
+                let footer = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize,
+                                                                         elementKind: UICollectionView.elementKindSectionFooter,
+                                                                         alignment: .bottom)
+                section.boundarySupplementaryItems = [header, footer]
                 
                 return section
                 

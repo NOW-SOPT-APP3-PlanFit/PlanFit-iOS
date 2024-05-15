@@ -87,7 +87,7 @@ private extension WorkoutImageHeader {
         
         heartButton.snp.makeConstraints {
             $0.leading.equalTo(currentWorkout.snp.trailing).offset(4)
-            $0.bottom.equalToSuperview().offset(2)
+            $0.bottom.equalToSuperview().offset(-2)
             $0.width.height.equalTo(24)
         }
         
