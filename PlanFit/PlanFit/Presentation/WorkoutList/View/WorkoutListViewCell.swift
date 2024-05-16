@@ -47,20 +47,20 @@ final class WorkoutListViewCell: UITableViewCell {
         arrowButton.addTarget(self, action: #selector(arrowButtonDidTap), for: .touchUpInside)
     }
     
-    @objc
-    private func arrowButtonDidTap(){
-        guard let currentImage = arrowButton.currentImage else { return }
-        
-        if currentImage == UIImage.arrowDown {
+    private func updateForExpansion() {
+        isExpanded.toggle()
+        if isExpanded {
             arrowButton.setImage(UIImage.arrowTop, for: .normal)
-            isExpanded = true
             additionalInfoLabel.isHidden = false
-            arrowButton.setImage(UIImage.arrowTop, for: .normal)
-        } else if currentImage == UIImage.arrowTop {
+        } else {
             arrowButton.setImage(UIImage.arrowDown, for: .normal)
-            isExpanded = false
             additionalInfoLabel.isHidden = true
         }
+    }
+    
+    @objc
+    private func arrowButtonDidTap() {
+        updateForExpansion()
         invalidateIntrinsicContentSize()
     }
 }
