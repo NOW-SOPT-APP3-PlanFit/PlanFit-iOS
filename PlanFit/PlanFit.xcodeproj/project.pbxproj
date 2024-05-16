@@ -13,6 +13,7 @@
 		212E8EB32BF4D5C0004A7576 /* WorkoutImageFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */; };
 		212E8EB52BF4F38D004A7576 /* WorkoutSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */; };
 		212E8EB72BF50BD2004A7576 /* WorkoutSetFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */; };
+		21E4CF322BF5C98A0017EEF4 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
 		DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059C2BF3595E00283B48 /* SceneDelegate.swift */; };
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageFooter.swift; sourceTree = "<group>"; };
 		212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetCell.swift; sourceTree = "<group>"; };
 		212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetFooter.swift; sourceTree = "<group>"; };
+		21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88059A2BF3595E00283B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88059C2BF3595E00283B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				DE8805F62BF36BC800283B48 /* WorkoutView.swift */,
+				21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */,
 				212E8EAF2BF3D6DC004A7576 /* Cell */,
 			);
 			path = View;
@@ -420,6 +423,7 @@
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
 				DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */,
+				21E4CF322BF5C98A0017EEF4 /* StopwatchView.swift in Sources */,
 				DE8805C92BF3670D00283B48 /* Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

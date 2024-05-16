@@ -19,6 +19,8 @@ class WorkoutViewController: UIViewController {
     
     private let rootView = WorkoutView()
     
+    private let stopwatchView = StopwatchView()
+    
     private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>!
     
     private let workoutImageData = WorkoutImageData.list
@@ -55,7 +57,7 @@ class WorkoutViewController: UIViewController {
                                            action: nil
         )
         
-        navigationItem.titleView = rootView.currentTimeView
+        navigationItem.titleView = stopwatchView
         navigationItem.rightBarButtonItems = [ellipsisItem, headphoneItem]
         
         navigationBarColor()
