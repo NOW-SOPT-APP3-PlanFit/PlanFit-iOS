@@ -38,7 +38,15 @@ class WorkoutSetCell: UICollectionViewCell, ReuseIdentifiable {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        setInitialAttributes()
+    }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutSetCell {
     func setUI() {
@@ -46,7 +54,7 @@ private extension WorkoutSetCell {
         
         setCount.do { $0.setText("", font: .body01B, color: .gray04) }
         
-        weight.do { 
+        weight.do {
             $0.setText("", font: .subtitle01, color: .gray04)
             $0.textAlignment = .right
         }
@@ -64,7 +72,7 @@ private extension WorkoutSetCell {
     }
     
     func setViewHierarchy() {
-        addSubviews(setCount, weight, kgLabel, repsNum, repsLabel, slash)
+        contentView.addSubviews(setCount, weight, kgLabel, repsNum, repsLabel, slash)
     }
     
     func setAutoLayout() {
@@ -104,6 +112,17 @@ private extension WorkoutSetCell {
             $0.width.equalTo(14)
         }
     }
+    
+    func setInitialAttributes() {
+        layer.borderWidth = 0
+        layer.borderColor = UIColor.clear.cgColor
+        backgroundColor = .clear
+        setCount.textColor = .gray04
+        weight.textColor = .gray04
+        kgLabel.textColor = .gray04
+        repsNum.textColor = .gray04
+        repsLabel.textColor = .gray04
+    }
 }
 
 // MARK: - Data Bind
@@ -113,15 +132,21 @@ extension WorkoutSetCell {
         setCount.text = "\(setNum + 1)세트"
         weight.text = String(data.weight)
         repsNum.text = String(data.repsNum)
+        
+        if data.completedSet {
+            completedSetAttributes()
+        } else if data.currentSet {
+            currentSetAttributes()
+        } else {
+            setInitialAttributes()
+        }
     }
 }
 
 // MARK: - Current, Completed Set setting
 
 extension WorkoutSetCell {
-    func currentSetAttributes(setData data: SetVolume) {
-        guard data.currentSet == true else { return }
-        
+    func currentSetAttributes() {
         layer.borderWidth = 1
         layer.borderColor = UIColor.mainGreen.cgColor
         
@@ -132,9 +157,7 @@ extension WorkoutSetCell {
         repsLabel.textColor = .gray01
     }
     
-    func completedSetAttributes(setData data: SetVolume) {
-        guard data.completedSet == true else { return }
-        
+    func completedSetAttributes() {
         layer.borderWidth = 0
         layer.borderColor = .none
         

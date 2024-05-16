@@ -31,11 +31,6 @@ extension SetVolume{
         SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
         SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
         SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
-        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
-        SetVolume(weight: 8, repsNum: 15, currentSet: true, completedSet: false),
-        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
-        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
-        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
         SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
     ]
 }

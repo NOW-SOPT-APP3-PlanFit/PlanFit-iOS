@@ -101,9 +101,6 @@ class WorkoutViewController: UIViewController {
                     return UICollectionViewCell()
                 }
                 
-                if indexPath.item == 0 {
-                    cell.currentSetAttributes(setData: setVolume)
-                }
                 cell.dataBind(setData: setVolume, setNum: indexPath.item)
                 return cell
                 
@@ -260,12 +257,14 @@ class WorkoutViewController: UIViewController {
         
         guard let currentCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
         setVolumeList[currentSet.item].completedSet = true
-        currentCell.completedSetAttributes(setData: setVolumeList[currentSet.item])
+        setVolumeList[currentSet.item].currentSet = false
+        currentCell.completedSetAttributes()
         
         currentSet.item += 1
         guard let nextCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
         setVolumeList[currentSet.item].currentSet = true
-        nextCell.currentSetAttributes(setData: setVolumeList[currentSet.item])
-        print("hi")
+        nextCell.currentSetAttributes()
+        
+        applySectionItems()
     }
 }
