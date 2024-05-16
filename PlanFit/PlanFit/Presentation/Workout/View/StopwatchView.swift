@@ -17,6 +17,8 @@ class StopwatchView: UIView {
     
     private let currentTimePlayImage = UIImageView()
 
+    // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

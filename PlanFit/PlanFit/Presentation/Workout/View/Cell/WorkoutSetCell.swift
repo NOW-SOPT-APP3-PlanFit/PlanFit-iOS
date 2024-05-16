@@ -106,6 +106,8 @@ private extension WorkoutSetCell {
     }
 }
 
+// MARK: - Data Bind
+
 extension WorkoutSetCell {
     func dataBind(setData data: SetVolume, setNum: Int) {
         setCount.text = "\(setNum + 1)세트"
