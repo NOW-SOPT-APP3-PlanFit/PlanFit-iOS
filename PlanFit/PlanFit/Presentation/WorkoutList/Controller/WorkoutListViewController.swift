@@ -44,8 +44,6 @@ extension WorkoutListViewController: UITableViewDelegate {
             if let cell = rootView.tableView.cellForRow(at: indexPath) as? WorkoutListViewCell {
                 if cell.isExpanded {
                     return UITableView.automaticDimension
-                } else {
-                    return 82
                 }
             }
         }
