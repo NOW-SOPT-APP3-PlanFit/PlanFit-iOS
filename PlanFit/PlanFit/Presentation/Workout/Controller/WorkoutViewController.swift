@@ -25,7 +25,7 @@ class WorkoutViewController: UIViewController {
     
     private let workoutImageData = WorkoutImageData.list
     
-    private let setVolumeList = SetVolume.list
+    private var setVolumeList = SetVolume.list
     
     // MARK: - View Life Cycle
     
@@ -107,8 +107,9 @@ class WorkoutViewController: UIViewController {
         }
         )
         
-        dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
-            guard let sectionLayoutKind = Section(rawValue: indexPath.section) else { return UICollectionReusableView() }
+        dataSource.supplementaryViewProvider = { [weak self] (collectionView, kind, indexPath) in
+            guard let self = self else { return nil }
+            guard let sectionLayoutKind = Section(rawValue: indexPath.section) else { return nil }
             
             switch kind {
             case UICollectionView.elementKindSectionHeader:
@@ -149,6 +150,9 @@ class WorkoutViewController: UIViewController {
                     else {
                         return UICollectionReusableView()
                     }
+                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.addSetDidtap))
+                    footerView.addSetStackView.addGestureRecognizer(tapGestureRecognizer)
+                    
                     return footerView
                 }
             default:
@@ -156,13 +160,17 @@ class WorkoutViewController: UIViewController {
             }
         }
         
+        rootView.collectionView.collectionViewLayout = setLayout()
+        
+        applySectionItems()
+    }
+    
+    private func applySectionItems() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, AnyHashable>()
         snapshot.appendSections([.WorkOutImage, .SetVolume])
         snapshot.appendItems(workoutImageData, toSection: .WorkOutImage)
         snapshot.appendItems(setVolumeList, toSection: .SetVolume)
         dataSource.apply(snapshot)
-        
-        rootView.collectionView.collectionViewLayout = setLayout()
     }
     
     private func setLayout() -> UICollectionViewLayout {
@@ -220,5 +228,16 @@ class WorkoutViewController: UIViewController {
             }
         }
         return layout
+    }
+    
+    // MARK: - Add Set StackView did tap
+    
+    @objc
+    private func addSetDidtap() {
+        guard setVolumeList.count < 30 else { return }
+        
+        let setVolume = SetVolume(weight: 8, repsNum: 15)
+        setVolumeList.append(setVolume)
+        applySectionItems()
     }
 }

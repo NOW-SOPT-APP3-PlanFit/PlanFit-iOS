@@ -29,13 +29,6 @@ extension SetVolume{
         SetVolume(weight: 200, repsNum: 7),
         SetVolume(weight: 8, repsNum: 200),
         SetVolume(weight: 100, repsNum: 100),
-        SetVolume(weight: 8, repsNum: 15),
-        SetVolume(weight: 100, repsNum: 100),
-        SetVolume(weight: 8, repsNum: 15),
-        SetVolume(weight: 100, repsNum: 100),
-        SetVolume(weight: 8, repsNum: 15),
-        SetVolume(weight: 100, repsNum: 100),
-        SetVolume(weight: 8, repsNum: 15),
-        SetVolume(weight: 100, repsNum: 100),
+        SetVolume(weight: 8, repsNum: 15)
     ]
 }
