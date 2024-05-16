@@ -14,6 +14,8 @@ struct WorkoutImageData: Hashable {
 struct SetVolume: Hashable {
     let weight: Int
     let repsNum: Int
+    var currentSet: Bool
+    var completedSet: Bool
     let uuid = UUID()
 }
 
@@ -25,10 +27,15 @@ extension WorkoutImageData {
 
 extension SetVolume{
     static let list = [
-        SetVolume(weight: 200, repsNum: 200),
-        SetVolume(weight: 200, repsNum: 7),
-        SetVolume(weight: 8, repsNum: 200),
-        SetVolume(weight: 100, repsNum: 100),
-        SetVolume(weight: 8, repsNum: 15)
+        SetVolume(weight: 8, repsNum: 15, currentSet: true, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: true, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false),
+        SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
     ]
 }

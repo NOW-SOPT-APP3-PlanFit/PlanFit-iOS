@@ -115,3 +115,35 @@ extension WorkoutSetCell {
         repsNum.text = String(data.repsNum)
     }
 }
+
+// MARK: - Current, Completed Set setting
+
+extension WorkoutSetCell {
+    func currentSetAttributes(setData data: SetVolume) {
+        guard data.currentSet == true else { return }
+        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.mainGreen.cgColor
+        
+        setCount.textColor = .gray01
+        weight.textColor = .gray01
+        kgLabel.textColor = .gray01
+        repsNum.textColor = .gray01
+        repsLabel.textColor = .gray01
+    }
+    
+    func completedSetAttributes(setData data: SetVolume) {
+        guard data.completedSet == true else { return }
+        
+        layer.borderWidth = 0
+        layer.borderColor = .none
+        
+        backgroundColor = .subGreen02
+        
+        setCount.textColor = .subGreen01
+        weight.textColor = .subGreen01
+        kgLabel.textColor = .subGreen01
+        repsNum.textColor = .subGreen01
+        repsLabel.textColor = .subGreen01
+    }
+}

@@ -27,6 +27,8 @@ class WorkoutViewController: UIViewController {
     
     private var setVolumeList = SetVolume.list
     
+    private var currentSet = IndexPath(item: 0, section: 1)
+    
     // MARK: - View Life Cycle
     
     override func loadView() {
@@ -38,6 +40,7 @@ class WorkoutViewController: UIViewController {
         
         setNavigationBar()
         configureCollectionView()
+        setCompleteSetBtn()
     }
     
     // MARK: - NavigationBar Setting
@@ -98,6 +101,9 @@ class WorkoutViewController: UIViewController {
                     return UICollectionViewCell()
                 }
                 
+                if indexPath.item == 0 {
+                    cell.currentSetAttributes(setData: setVolume)
+                }
                 cell.dataBind(setData: setVolume, setNum: indexPath.item)
                 return cell
                 
@@ -150,6 +156,7 @@ class WorkoutViewController: UIViewController {
                     else {
                         return UICollectionReusableView()
                     }
+                    
                     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.addSetDidtap))
                     footerView.addSetStackView.addGestureRecognizer(tapGestureRecognizer)
                     
@@ -214,7 +221,7 @@ class WorkoutViewController: UIViewController {
                 let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+                section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 0, trailing: 16)
                 section.interGroupSpacing = 8
                 
                 let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -236,8 +243,29 @@ class WorkoutViewController: UIViewController {
     private func addSetDidtap() {
         guard setVolumeList.count < 30 else { return }
         
-        let setVolume = SetVolume(weight: 8, repsNum: 15)
+        let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
         setVolumeList.append(setVolume)
         applySectionItems()
+    }
+    
+    // MARK: - Complete Set Button tap
+    
+    private func setCompleteSetBtn() {
+        rootView.completeSetButton.addTarget(self, action: #selector(completeSetBtnDidtap), for: .touchUpInside)
+    }
+    
+    @objc
+    private func completeSetBtnDidtap() {
+        guard currentSet.item < setVolumeList.count else { return }
+        
+        guard let currentCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
+        setVolumeList[currentSet.item].completedSet = true
+        currentCell.completedSetAttributes(setData: setVolumeList[currentSet.item])
+        
+        currentSet.item += 1
+        guard let nextCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
+        setVolumeList[currentSet.item].currentSet = true
+        nextCell.currentSetAttributes(setData: setVolumeList[currentSet.item])
+        print("hi")
     }
 }

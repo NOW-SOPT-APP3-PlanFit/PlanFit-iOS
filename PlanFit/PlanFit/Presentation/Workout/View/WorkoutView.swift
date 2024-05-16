@@ -15,9 +15,9 @@ class WorkoutView: UIView {
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
-    private lazy var breakTimerButton = UIButton()
+    lazy var completeSetButton = UIButton()
     
-    private lazy var completeSetButton = UIButton()
+    private lazy var breakTimerButton = UIButton()
     
     // MARK: - Initializer
     
