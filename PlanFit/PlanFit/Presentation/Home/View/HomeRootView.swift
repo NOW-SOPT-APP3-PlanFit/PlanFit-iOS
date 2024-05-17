@@ -17,8 +17,9 @@ final class HomeRootView: UIView {
     
     private let recommendPlanButton = UIButton()
     
-    // MARK: - Property
+    private let startExerciseBannerView = StartExerciseBannerView()
     
+    private let lineImageView = UIImageView()
     
     // MARK: - Initializer
     
@@ -50,10 +51,15 @@ private extension HomeRootView {
             $0.setTitle("체지방 감소 추천 플랜 (초급)", font: .subtitle01, titleColor: .gray01)
             $0.setImage(.arrowLeft, for: .normal)
         }
+        
+        lineImageView.do {
+            $0.image = UIImage(resource: .line).withRenderingMode(.alwaysOriginal)
+        }
     }
     
     func setViewHierarchy() {
-        addSubviews(goalBannerView, recommendPlanButton)
+        addSubviews(goalBannerView, recommendPlanButton, startExerciseBannerView, lineImageView)
+        bringSubviewToFront(lineImageView)
     }
     
     func setAutoLayout() {
@@ -66,6 +72,18 @@ private extension HomeRootView {
         recommendPlanButton.snp.makeConstraints {
             $0.top.equalTo(goalBannerView.snp.bottom).offset(36)
             $0.leading.equalToSuperview().offset(20)
+        }
+        
+        startExerciseBannerView.snp.makeConstraints {
+            $0.top.equalTo(recommendPlanButton.snp.bottom).offset(12)
+            $0.leading.trailing.equalTo(goalBannerView)
+        }
+        
+        lineImageView.snp.makeConstraints {
+            $0.top.equalTo(startExerciseBannerView.snp.bottom).offset(-5)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(Screen.width(12))
+            $0.height.equalTo(Screen.height(40))
         }
     }
 }
