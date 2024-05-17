@@ -1,5 +1,5 @@
 //
-//  GoalSectionView.swift
+//  GoalBannerView.swift
 //  PlanFit
 //
 //  Created by 김진웅 on 5/17/24.
@@ -25,18 +25,19 @@ final class GoalBannerView: BannerBackgroundView {
     
     private let countStackView = UIStackView(axis: .horizontal)
     
-    private let firstStampImageView = UIImageView()
+    private let firstStampButton = StampButton()
     
-    private let secondStampImageView = UIImageView()
+    private let secondStampButton = StampButton()
     
-    private let thirdStampImageView = UIImageView()
+    private let thirdStampButton = StampButton()
     
-    private let imageStackView = UIStackView(axis: .horizontal)
+    private let stampStackView = UIStackView(axis: .horizontal)
     
     private let periodLabel = UILabel()
     
     // MARK: - Property
     
+    private lazy var stampButtons = [firstStampButton, secondStampButton, thirdStampButton]
     
     // MARK: - Initializer
     
@@ -51,28 +52,46 @@ final class GoalBannerView: BannerBackgroundView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Action
-    
-    
 }
 
 // MARK: - UISetting
 
 private extension GoalBannerView {
     func setUI() {        
-        titleLabel.setText("이번 주 운동 목표는", font: .subtitle01, color: .gray01)
+        titleLabel.do {
+            $0.setText("이번 주 운동 목표는", font: .subtitle01, color: .gray01)
+        }
         
         tooltipImageView.do {
             $0.image = .tooltip
+        }
+        
+        goalCountLabel.do {
+            $0.setText("1", font: .subtitle01, color: .gray01)
+        }
+        
+        totalCountLabel.do {
+            $0.setText(" / 3회", font: .subtitle01, color: .gray04)
+        }
+        
+        firstStampButton.do {
+            $0.activate()
+        }
+        
+        stampStackView.do {
+            $0.spacing = 4
+        }
+        
+        periodLabel.do {
+            $0.setText("2024.04.22. ~ 04.28.", font: .caption02, color: .gray04)
         }
     }
     
     func setViewHierarchy() {
         titleStackView.addArrangedSubviews(titleLabel, tooltipImageView)
         countStackView.addArrangedSubviews(goalCountLabel, totalCountLabel)
-        imageStackView.addArrangedSubviews(firstStampImageView, secondStampImageView, thirdStampImageView)
-        addSubviews(titleStackView, countStackView, imageStackView, periodLabel)
+        stampStackView.addArrangedSubviews(firstStampButton, secondStampButton, thirdStampButton)
+        addSubviews(titleStackView, countStackView, stampStackView, periodLabel)
     }
     
     func setAutoLayout() {
@@ -85,7 +104,19 @@ private extension GoalBannerView {
             $0.leading.equalToSuperview().offset(23)
         }
         
-        goalCountLabel
+        countStackView.snp.makeConstraints {
+            $0.trailing.equalToSuperview().offset(-16)
+            $0.centerY.equalTo(titleStackView)
+        }
+        
+        stampStackView.snp.makeConstraints {
+            $0.top.equalTo(titleStackView.snp.bottom).offset(16)
+            $0.leading.bottom.equalToSuperview().inset(23)
+            $0.height.equalTo(Screen.height(50))
+        }
+        
+        periodLabel.snp.makeConstraints {
+            $0.trailing.bottom.equalToSuperview().inset(15)
+        }
     }
 }
-
