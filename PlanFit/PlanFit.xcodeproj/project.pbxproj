@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */; };
+		DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5A2BF6E5750082220A /* GoalBannerView.swift */; };
+		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
 		DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059C2BF3595E00283B48 /* SceneDelegate.swift */; };
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
@@ -30,7 +33,7 @@
 		DE8805D72BF3691400283B48 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D62BF3691400283B48 /* ReactiveMoya */; };
 		DE8805D92BF3691400283B48 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D82BF3691400283B48 /* RxMoya */; };
 		DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */; };
-		DE8805E52BF36B5500283B48 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E42BF36B5500283B48 /* HomeView.swift */; };
+		DE8805E52BF36B5500283B48 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E42BF36B5500283B48 /* HomeRootView.swift */; };
 		DE8805E82BF36B7800283B48 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */; };
 		DE8805EB2BF36B8900283B48 /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */; };
 		DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBackgroundView.swift; sourceTree = "<group>"; };
+		DE399C5A2BF6E5750082220A /* GoalBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBannerView.swift; sourceTree = "<group>"; };
+		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88059A2BF3595E00283B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88059C2BF3595E00283B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +65,7 @@
 		DE8805C82BF3670D00283B48 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		DE8805CA2BF3676000283B48 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DE8805E42BF36B5500283B48 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DE8805E42BF36B5500283B48 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
 		DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
 		DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmUpViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE399C5E2BF6F6030082220A /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */,
+				DE399C5C2BF6ED5D0082220A /* StampButton.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 		DE88058E2BF3595E00283B48 = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +239,9 @@
 		DE8805E22BF36B4400283B48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE8805E42BF36B5500283B48 /* HomeView.swift */,
+				DE8805E42BF36B5500283B48 /* HomeRootView.swift */,
+				DE399C5A2BF6E5750082220A /* GoalBannerView.swift */,
+				DE399C5E2BF6F6030082220A /* UIComponent */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,7 +382,9 @@
 				DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */,
 				DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */,
 				DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */,
-				DE8805E52BF36B5500283B48 /* HomeView.swift in Sources */,
+				DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */,
+				DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */,
+				DE8805E52BF36B5500283B48 /* HomeRootView.swift in Sources */,
 				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
 				DE8805F72BF36BC800283B48 /* WorkoutView.swift in Sources */,
 				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
@@ -375,6 +394,7 @@
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
 				DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
+				DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
