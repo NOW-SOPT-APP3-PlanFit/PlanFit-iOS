@@ -23,7 +23,7 @@ final class WorkoutListViewCell: UITableViewCell {
     
     private let captionLabel = UILabel()
     
-    private let additionalInfoLabel = UILabel()
+    private lazy var additionalInfoLabel = UILabel()
     
     private let arrowButton = UIButton()
     
@@ -89,7 +89,14 @@ private extension WorkoutListViewCell {
     }
     
     func setViewHierarchy() {
-        contentView.addSubviews(hamburgerIcon, workoutImage, nameLabel, captionLabel, additionalInfoLabel, arrowButton)
+        contentView.addSubviews(
+            hamburgerIcon,
+            workoutImage,
+            nameLabel,
+            captionLabel,
+            additionalInfoLabel,
+            arrowButton
+        )
     }
     
     func setAutoLayout() {
