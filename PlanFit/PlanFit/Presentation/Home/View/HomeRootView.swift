@@ -21,6 +21,8 @@ final class HomeRootView: UIView {
     
     private let lineImageView = UIImageView()
     
+    private let exerciseInfoBannerView = ExerciseInfoBannerView()
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -58,7 +60,9 @@ private extension HomeRootView {
     }
     
     func setViewHierarchy() {
-        addSubviews(goalBannerView, recommendPlanButton, startExerciseBannerView, lineImageView)
+        addSubviews(
+            goalBannerView, recommendPlanButton, startExerciseBannerView, lineImageView, exerciseInfoBannerView
+        )
         bringSubviewToFront(lineImageView)
     }
     
@@ -84,6 +88,11 @@ private extension HomeRootView {
             $0.centerX.equalToSuperview()
             $0.width.equalTo(Screen.width(12))
             $0.height.equalTo(Screen.height(40))
+        }
+        
+        exerciseInfoBannerView.snp.makeConstraints {
+            $0.top.equalTo(lineImageView.snp.bottom).offset(-5)
+            $0.leading.trailing.equalTo(startExerciseBannerView)
         }
     }
 }
