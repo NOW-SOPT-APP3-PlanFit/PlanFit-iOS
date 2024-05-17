@@ -256,18 +256,22 @@ class WorkoutViewController: UIViewController {
         return layout
     }
     
-    // MARK: - Add Set StackView did tap
+    // MARK: - Action
     
     @objc
     private func addSetDidtap() {
         guard setVolumeList.count < 30 else { return }
         
-        let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
-        setVolumeList.append(setVolume)
+        if setVolumeList.last?.completedSet == true {
+            let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: true, completedSet: false)
+            setVolumeList.append(setVolume)
+            setCompletedSetNum(setVolumeList.count)
+        } else {
+            let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
+            setVolumeList.append(setVolume)
+        }
         applySectionItems()
     }
-    
-    // MARK: - Complete Set Button tap
     
     private func setCompleteSetBtn() {
         rootView.completeSetButton.addTarget(self, action: #selector(completeSetBtnDidtap), for: .touchUpInside)
@@ -281,12 +285,34 @@ class WorkoutViewController: UIViewController {
         setVolumeList[currentSet.item].completedSet = true
         setVolumeList[currentSet.item].currentSet = false
         currentCell.completedSetAttributes()
+        setCompletedSetNum(currentSet.item + 2)
         
         currentSet.item += 1
-        guard let nextCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
+        guard let nextCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell
+        else {
+            setCompletedSetNum(nil)
+            return
+        }
         setVolumeList[currentSet.item].currentSet = true
         nextCell.currentSetAttributes()
         
         applySectionItems()
+    }
+    
+    private func setCompletedSetNum(_ completedSet: Int?) {
+        guard let completedSet = completedSet 
+        else {
+            rootView.completeSetButton.setTitle(
+                "세트 완료",
+                font: .subtitle01,
+                titleColor: .gray10
+            )
+            return
+        }
+        rootView.completeSetButton.setTitle(
+            "\(completedSet) 세트 완료",
+            font: .subtitle01,
+            titleColor: .gray10
+        )
     }
 }
