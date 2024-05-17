@@ -10,6 +10,8 @@
 		DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */; };
 		DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5A2BF6E5750082220A /* GoalBannerView.swift */; };
 		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
+		DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */; };
+		DE399C622BF6FACC0082220A /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C612BF6FACC0082220A /* DropDownButton.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
 		DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059C2BF3595E00283B48 /* SceneDelegate.swift */; };
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBackgroundView.swift; sourceTree = "<group>"; };
 		DE399C5A2BF6E5750082220A /* GoalBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBannerView.swift; sourceTree = "<group>"; };
 		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
+		DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExerciseBannerView.swift; sourceTree = "<group>"; };
+		DE399C612BF6FACC0082220A /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88059A2BF3595E00283B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88059C2BF3595E00283B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */,
 				DE399C5C2BF6ED5D0082220A /* StampButton.swift */,
+				DE399C612BF6FACC0082220A /* DropDownButton.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			children = (
 				DE8805E42BF36B5500283B48 /* HomeRootView.swift */,
 				DE399C5A2BF6E5750082220A /* GoalBannerView.swift */,
+				DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */,
 				DE399C5E2BF6F6030082220A /* UIComponent */,
 			);
 			path = View;
@@ -387,6 +393,7 @@
 				DE8805E52BF36B5500283B48 /* HomeRootView.swift in Sources */,
 				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
 				DE8805F72BF36BC800283B48 /* WorkoutView.swift in Sources */,
+				DE399C622BF6FACC0082220A /* DropDownButton.swift in Sources */,
 				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
 				DE8805F12BF36BA400283B48 /* WarmUpView.swift in Sources */,
 				DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */,
@@ -396,6 +403,7 @@
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
+				DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,

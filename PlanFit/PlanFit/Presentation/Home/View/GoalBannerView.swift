@@ -35,10 +35,6 @@ final class GoalBannerView: BannerBackgroundView {
     
     private let periodLabel = UILabel()
     
-    // MARK: - Property
-    
-    private lazy var stampButtons = [firstStampButton, secondStampButton, thirdStampButton]
-    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
