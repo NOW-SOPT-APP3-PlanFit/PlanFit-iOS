@@ -21,6 +21,8 @@ class WorkoutViewController: UIViewController {
     
     private let stopwatchView = StopwatchView()
     
+    private var stopwatchIsRunning = false
+    
     private var dataSource: UICollectionViewDiffableDataSource<Section, AnyHashable>!
     
     private let workoutImageData = WorkoutImageData.list
@@ -54,6 +56,7 @@ class WorkoutViewController: UIViewController {
         navigationItem.titleView = stopwatchView
         navigationItem.rightBarButtonItems = [ellipsisItem, headphoneItem]
         
+        addGestureToStopwatchView()
         navigationBarColor()
     }
     
@@ -64,6 +67,24 @@ class WorkoutViewController: UIViewController {
         appearance.backgroundColor = .gray08BG
         navigationBar?.standardAppearance = appearance
         navigationBar?.scrollEdgeAppearance = navigationBar?.standardAppearance
+    }
+    
+    private func addGestureToStopwatchView() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.stopwatchViewDidTap))
+        stopwatchView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc
+    private func stopwatchViewDidTap() {
+        if stopwatchIsRunning {
+            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .noOnairDot)
+            stopwatchView.currentTimePlayImage.image = UIImage(resource: .play)
+            stopwatchIsRunning = false
+        } else {
+            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .onairDot)
+            stopwatchView.currentTimePlayImage.image = UIImage(resource: .pause)
+            stopwatchIsRunning = true
+        }
     }
     
     // MARK: - CollectionView Setting

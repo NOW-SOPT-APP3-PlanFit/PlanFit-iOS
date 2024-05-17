@@ -11,11 +11,11 @@ class StopwatchView: UIView {
     
     // MARK: - UI Component
     
-    private let currentTimeOnAirDot = UIImageView()
+     let currentTimeOnAirDot = UIImageView()
+    
+    let currentTimePlayImage = UIImageView()
     
     private let currentTimeLabel = UILabel()
-    
-    private let currentTimePlayImage = UIImageView()
 
     // MARK: - Initializer
     
@@ -44,7 +44,7 @@ private extension StopwatchView {
         }
         
         currentTimeOnAirDot.do {
-            $0.image = UIImage(resource: .onairDot)
+            $0.image = UIImage(resource: .noOnairDot)
         }
         
         currentTimeLabel.do {
