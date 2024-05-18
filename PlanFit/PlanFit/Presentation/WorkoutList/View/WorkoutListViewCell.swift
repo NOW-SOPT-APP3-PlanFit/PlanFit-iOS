@@ -71,17 +71,17 @@ private extension WorkoutListViewCell {
             $0.image = .hamburger
         }
         nameLabel.do {
-            $0.textColor = .white
+            $0.textColor = .gray01
             $0.textAlignment = .left
             $0.font = UIFont.neoFont(for: .subtitle02B)
         }
         captionLabel.do {
-            $0.textColor = .white
+            $0.textColor = .gray02
             $0.textAlignment = .left
             $0.font = UIFont.neoFont(for: .caption02)
         }
         additionalInfoLabel.do {
-            $0.textColor = .white
+            $0.textColor = .gray02
             $0.textAlignment = .left
             $0.numberOfLines = 6
             $0.font = UIFont.neoFont(for: .caption02)

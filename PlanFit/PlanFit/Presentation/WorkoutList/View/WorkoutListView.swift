@@ -64,34 +64,36 @@ private extension WorkoutListView {
             $0.image = .seperator
         }
         totalNumberLabel.do {
-            $0.setText("총 6개", font: .caption02, color: .white)
+            $0.setText("총 6개", font: .caption02, color: .gray01)
+            $0.textAlignment = .center
         }
         totalTimeIcon.do {
             $0.image = .clock
         }
         totalTimeLabel.do {
-            $0.setText("58분", font: .caption02, color: .white)
+            $0.setText("58분", font: .caption02, color: .gray01)
+            $0.textAlignment = .center
         }
         superSetIcon.do {
             $0.image = .toolTip
         }
         superSetLabel.do {
-            $0.setText("슈퍼세트", font: .caption02, color: .white)
+            $0.setText("슈퍼세트", font: .body01, color: .gray02)
         }
         superSetSwitch.do {
             $0.isOn = false
             $0.onTintColor = UIColor(named: "mainGreen")
-            $0.transform = CGAffineTransform(scaleX: 40/(superSetSwitch.bounds.size.width), y: 22/(superSetSwitch.bounds.size.height))
+            $0.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            //$0.transform = CGAffineTransform(scaleX: 40/(superSetSwitch.bounds.size.width), y: 22/(superSetSwitch.bounds.size.height))
         }
         footer.do {
-            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 44)
+            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 48)
         }
         footerIcon.do {
             $0.image = .plus
         }
         footerLabel.do {
-            $0.setText("운동 추가하기", font: .subtitle02B, color: .white)
-
+            $0.setText("운동 추가하기", font: .subtitle02B, color: .gray02)
         }
     }
     
@@ -118,11 +120,11 @@ private extension WorkoutListView {
             $0.leading.equalToSuperview().offset(20)
         }
         headerSeperator.snp.makeConstraints() {
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(-1)
             $0.leading.equalTo(totalNumberLabel.snp.trailing).offset(6)
         }
         totalTimeIcon.snp.makeConstraints() {
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(-1)
             $0.leading.equalTo(headerSeperator.snp.trailing).offset(6)
             $0.size.equalTo(16)
         }
@@ -131,17 +133,17 @@ private extension WorkoutListView {
             $0.leading.equalTo(totalTimeIcon.snp.trailing).offset(3)
         }
         superSetSwitch.snp.makeConstraints() {
-            $0.centerY.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(-1)
             $0.trailing.equalToSuperview().offset(-20)
         }
         superSetLabel.snp.makeConstraints() {
             $0.centerY.equalToSuperview()
-            $0.trailing.equalTo(superSetSwitch.snp.leading).offset(-8)
+            $0.trailing.equalTo(superSetSwitch.snp.leading)
         }
         superSetIcon.snp.makeConstraints() {
             $0.centerY.equalToSuperview()
             $0.trailing.equalTo(superSetLabel.snp.leading)
-            $0.size.equalTo(16)
+            $0.size.equalTo(20)
         }
         footerIcon.snp.makeConstraints {
             $0.centerY.equalToSuperview()
