@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE2A4EF52BFB7C1C004D0DCA /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */; };
 		DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */; };
 		DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5A2BF6E5750082220A /* GoalBannerView.swift */; };
 		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
@@ -34,8 +35,8 @@
 		DE8805D52BF3691400283B48 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D42BF3691400283B48 /* Moya */; };
 		DE8805D72BF3691400283B48 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D62BF3691400283B48 /* ReactiveMoya */; };
 		DE8805D92BF3691400283B48 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D82BF3691400283B48 /* RxMoya */; };
-		DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */; };
-		DE8805E52BF36B5500283B48 /* HomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E42BF36B5500283B48 /* HomeRootView.swift */; };
+		DE8805E02BF36B2E00283B48 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805DF2BF36B2E00283B48 /* ExerciseViewController.swift */; };
+		DE8805E52BF36B5500283B48 /* ExerciseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E42BF36B5500283B48 /* ExerciseRootView.swift */; };
 		DE8805E82BF36B7800283B48 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */; };
 		DE8805EB2BF36B8900283B48 /* WorkoutListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */; };
 		DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBackgroundView.swift; sourceTree = "<group>"; };
 		DE399C5A2BF6E5750082220A /* GoalBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBannerView.swift; sourceTree = "<group>"; };
 		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
@@ -70,8 +72,8 @@
 		DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		DE8805C82BF3670D00283B48 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		DE8805CA2BF3676000283B48 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
-		DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DE8805E42BF36B5500283B48 /* HomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootView.swift; sourceTree = "<group>"; };
+		DE8805DF2BF36B2E00283B48 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		DE8805E42BF36B5500283B48 /* ExerciseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRootView.swift; sourceTree = "<group>"; };
 		DE8805E72BF36B7800283B48 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
 		DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListView.swift; sourceTree = "<group>"; };
 		DE8805EE2BF36B9D00283B48 /* WarmUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarmUpViewController.swift; sourceTree = "<group>"; };
@@ -241,7 +243,8 @@
 		DE8805E12BF36B3E00283B48 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE8805DF2BF36B2E00283B48 /* HomeViewController.swift */,
+				DE8805DF2BF36B2E00283B48 /* ExerciseViewController.swift */,
+				DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,7 +252,7 @@
 		DE8805E22BF36B4400283B48 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE8805E42BF36B5500283B48 /* HomeRootView.swift */,
+				DE8805E42BF36B5500283B48 /* ExerciseRootView.swift */,
 				DE399C5A2BF6E5750082220A /* GoalBannerView.swift */,
 				DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */,
 				DE89874D2BF73FD9005638E6 /* ExerciseInfoBannerView.swift */,
@@ -396,18 +399,19 @@
 				DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */,
 				DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */,
 				DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */,
-				DE8805E52BF36B5500283B48 /* HomeRootView.swift in Sources */,
+				DE8805E52BF36B5500283B48 /* ExerciseRootView.swift in Sources */,
 				DE8805B72BF360E800283B48 /* NSAttributedString+.swift in Sources */,
 				DE8805F72BF36BC800283B48 /* WorkoutView.swift in Sources */,
 				DE399C622BF6FACC0082220A /* DropDownButton.swift in Sources */,
 				DE8805B42BF360A500283B48 /* UIFont+.swift in Sources */,
 				DE8805F12BF36BA400283B48 /* WarmUpView.swift in Sources */,
 				DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */,
-				DE8805E02BF36B2E00283B48 /* HomeViewController.swift in Sources */,
+				DE8805E02BF36B2E00283B48 /* ExerciseViewController.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
 				DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */,
+				DE2A4EF52BFB7C1C004D0DCA /* HomeTabBarController.swift in Sources */,
 				DE8987502BF743CE005638E6 /* InfoItemView.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */,

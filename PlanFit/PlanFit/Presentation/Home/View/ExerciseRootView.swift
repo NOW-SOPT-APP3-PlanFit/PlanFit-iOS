@@ -1,5 +1,5 @@
 //
-//  HomeRootView.swift
+//  ExerciseRootView.swift
 //  PlanFit
 //
 //  Created by 김진웅 on 5/14/24.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class HomeRootView: UIView {
+final class ExerciseRootView: UIView {
     
     // MARK: - UIComponent
     
@@ -22,6 +22,8 @@ final class HomeRootView: UIView {
     private let lineImageView = UIImageView()
     
     private let exerciseInfoBannerView = ExerciseInfoBannerView()
+    
+    private let aiButton = UIButton()
     
     // MARK: - Initializer
     
@@ -40,7 +42,7 @@ final class HomeRootView: UIView {
 
 // MARK: - UISetting
 
-private extension HomeRootView {
+private extension ExerciseRootView {
     func setUI() {
         backgroundColor = .gray08BG
         
@@ -57,20 +59,28 @@ private extension HomeRootView {
         lineImageView.do {
             $0.image = UIImage(resource: .line).withRenderingMode(.alwaysOriginal)
         }
+        
+        aiButton.do {
+            let image = UIImage(resource: .ai).withRenderingMode(.alwaysOriginal)
+            $0.setImage(image, for: .normal)
+        }
     }
     
     func setViewHierarchy() {
         addSubviews(
-            goalBannerView, recommendPlanButton, startExerciseBannerView, lineImageView, exerciseInfoBannerView
+            goalBannerView, recommendPlanButton, startExerciseBannerView, lineImageView, exerciseInfoBannerView,
+            aiButton
         )
         bringSubviewToFront(lineImageView)
+        bringSubviewToFront(aiButton)
     }
     
     func setAutoLayout() {
         let safeArea = safeAreaLayoutGuide
         
         goalBannerView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(safeArea).inset(16)
+            $0.top.equalTo(safeArea).offset(40)
+            $0.leading.trailing.equalTo(safeArea).inset(16)
         }
         
         recommendPlanButton.snp.makeConstraints {
@@ -93,6 +103,11 @@ private extension HomeRootView {
         exerciseInfoBannerView.snp.makeConstraints {
             $0.top.equalTo(lineImageView.snp.bottom).offset(-5)
             $0.leading.trailing.equalTo(startExerciseBannerView)
+        }
+        
+        aiButton.snp.makeConstraints {
+            $0.bottom.equalTo(safeArea).offset(-10)
+            $0.trailing.equalToSuperview().offset(-39)
         }
     }
 }

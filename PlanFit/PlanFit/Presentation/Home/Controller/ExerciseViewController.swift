@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ExerciseViewController.swift
 //  PlanFit
 //
 //  Created by 김진웅 on 5/14/24.
@@ -7,14 +7,11 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class ExerciseViewController: UIViewController {
     
     // MARK: - UIComponent
     
-    private let rootView = HomeRootView()
-    
-    // MARK: - Property
-    
+    private let rootView = ExerciseRootView()
     
     // MARK: - LifeCycle
     
@@ -31,7 +28,7 @@ final class HomeViewController: UIViewController {
 
 // MARK: - UISetting
 
-private extension HomeViewController {
+private extension ExerciseViewController {
     func setNavigationBar() {
         let categoryButton = UIButton().then {
             var configuration = UIButton.Configuration.plain()
@@ -61,7 +58,7 @@ private extension HomeViewController {
         
         let navigationBarSeparator = UIView(frame: CGRect(
             x: 0,
-            y: navigationController!.navigationBar.frame.height + 1,
+            y: Screen.height(54),
             width: navigationController!.navigationBar.frame.width,
             height: 0.2
         ))
