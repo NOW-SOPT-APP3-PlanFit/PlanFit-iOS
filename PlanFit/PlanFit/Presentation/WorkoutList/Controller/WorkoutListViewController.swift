@@ -64,6 +64,11 @@ extension WorkoutListViewController: UITableViewDataSource {
         }
         cell.selectionStyle = .none
         cell.dataBind(workoutList[indexPath.row])
+        
+        if indexPath.row == 0 || indexPath.row == workoutList.count - 1 {
+            cell.hideHamburgerIcon()
+        }
+        
         return cell
     }
 }

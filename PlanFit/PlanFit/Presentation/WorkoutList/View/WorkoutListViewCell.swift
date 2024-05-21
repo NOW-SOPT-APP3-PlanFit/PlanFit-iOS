@@ -58,6 +58,10 @@ final class WorkoutListViewCell: UITableViewCell {
         }
     }
     
+    func hideHamburgerIcon() {
+        hamburgerIcon.isHidden = true
+    }
+    
     @objc
     private func arrowButtonDidTap() {
         updateForExpansion()
