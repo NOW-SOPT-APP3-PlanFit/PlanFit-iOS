@@ -116,4 +116,3 @@ private extension StartExerciseBannerView {
         }
     }
 }
-

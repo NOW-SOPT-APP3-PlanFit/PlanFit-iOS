@@ -107,4 +107,3 @@ private extension ExerciseInfoBannerView {
         }
     }
 }
-

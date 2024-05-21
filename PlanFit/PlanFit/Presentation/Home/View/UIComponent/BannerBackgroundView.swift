@@ -30,4 +30,3 @@ private extension BannerBackgroundView {
         layer.cornerRadius = 15
     }
 }
-
