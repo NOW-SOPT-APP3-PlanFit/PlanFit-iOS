@@ -33,7 +33,7 @@ private extension WorkoutListFooter {
     
     private func setUI() {
         self.do {
-            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 48)
+            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 180)
         }
         footerIcon.do {
             $0.image = .plus
@@ -49,11 +49,11 @@ private extension WorkoutListFooter {
     
     private func setAutoLayout() {
         footerIcon.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(16)
             $0.leading.equalToSuperview().offset(20)
         }
         footerLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalToSuperview().offset(16)
             $0.leading.equalToSuperview().offset(48)
         }
     }

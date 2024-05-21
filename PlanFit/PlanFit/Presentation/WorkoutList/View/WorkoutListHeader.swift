@@ -43,7 +43,7 @@ private extension WorkoutListHeader {
     
     private func setUI() {
         self.do {
-            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 32)
+            $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 44)
         }
         headerSeperator.do {
             $0.image = .seperator

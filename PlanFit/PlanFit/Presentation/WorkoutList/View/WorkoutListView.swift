@@ -66,12 +66,10 @@ private extension WorkoutListView {
         }
         tableView.snp.makeConstraints {
             $0.top.equalTo(navigationBar.snp.bottom)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(startButton.snp.top).offset(-20)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
         buttonBackGradiant.snp.makeConstraints() {
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalToSuperview()
+            $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(160)
         }
         startButton.snp.makeConstraints {
