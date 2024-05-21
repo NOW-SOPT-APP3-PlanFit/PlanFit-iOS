@@ -21,13 +21,13 @@ final class StartExerciseBannerView: BannerBackgroundView {
     
     private let firstContentStackView = UIStackView(axis: .horizontal)
     
-    private let minutesDropDownButton = DropDownButton()
+    let timeDropDownButton = DropDownButton()
     
     private let thirdExplanationLabel = UILabel()
     
     private let secondContentStackView = UIStackView(axis: .horizontal)
     
-    private let conditionsDropDownButton = DropDownButton()
+    let conditionsDropDownButton = DropDownButton()
     
     private let lastExplanationLabel = UILabel()
     
@@ -64,7 +64,7 @@ private extension StartExerciseBannerView {
             $0.setText("루틴,", font: .subtitle02B, color: .gray02)
         }
         
-        minutesDropDownButton.do {
+        timeDropDownButton.do {
             $0.setTitle("58분", font: .subtitle02B, titleColor: .mainGreen)
         }
         
@@ -90,7 +90,7 @@ private extension StartExerciseBannerView {
             firstExplanationLabel, sessionsDropDownButton, secondExplanationLabel
         )
         secondContentStackView.addArrangedSubviews(
-            minutesDropDownButton, thirdExplanationLabel
+            timeDropDownButton, thirdExplanationLabel
         )
         thirdContentStackView.addArrangedSubviews(
             conditionsDropDownButton, lastExplanationLabel

@@ -25,7 +25,7 @@ final class ExerciseInfoBannerView: BannerBackgroundView {
     
     private let infoItemStackView = UIStackView(axis: .horizontal)
     
-    private let startExerciseButton = UIButton()
+    let startExerciseButton = UIButton()
     
     // MARK: - Initializer
     

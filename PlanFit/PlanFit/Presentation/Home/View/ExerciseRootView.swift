@@ -17,11 +17,11 @@ final class ExerciseRootView: UIView {
     
     private let recommendPlanButton = UIButton()
     
-    private let startExerciseBannerView = StartExerciseBannerView()
+    let startExerciseBannerView = StartExerciseBannerView()
     
     private let lineImageView = UIImageView()
     
-    private let exerciseInfoBannerView = ExerciseInfoBannerView()
+    let exerciseInfoBannerView = ExerciseInfoBannerView()
     
     private let aiButton = UIButton()
     
@@ -111,4 +111,3 @@ private extension ExerciseRootView {
         }
     }
 }
-
