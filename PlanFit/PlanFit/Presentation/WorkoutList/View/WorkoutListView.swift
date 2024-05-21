@@ -42,6 +42,7 @@ private extension WorkoutListView {
     private func setUI() {
         tableView.do {
             $0.backgroundColor = UIColor(named: "gray08(BG)")
+            $0.showsVerticalScrollIndicator = false
             $0.tableHeaderView = header
             $0.tableFooterView = footer
         }
