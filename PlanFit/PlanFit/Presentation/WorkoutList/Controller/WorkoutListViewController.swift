@@ -13,7 +13,7 @@ final class WorkoutListViewController: UIViewController {
     
     private let rootView = WorkoutListView()
     
-    private let workoutList = WorkoutListModel.dummy()
+    private var workoutList = WorkoutListModel.dummy()
     
     override func loadView() {
         self.view = rootView
@@ -23,6 +23,9 @@ final class WorkoutListViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(named: "gray08(BG)")
+        self.rootView.tableView.dragInteractionEnabled = true
+        self.rootView.tableView.dragDelegate = self
+        
         register()
         setDelegate()
     }
@@ -71,5 +74,17 @@ extension WorkoutListViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+            let moveCell = self.workoutList[sourceIndexPath.row]
+            self.workoutList.remove(at: sourceIndexPath.row)
+            self.workoutList.insert(moveCell, at: destinationIndexPath.row)
+        }
+}
+
+extension WorkoutListViewController: UITableViewDragDelegate {
+func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
+        return [UIDragItem(itemProvider: NSItemProvider())]
     }
 }
