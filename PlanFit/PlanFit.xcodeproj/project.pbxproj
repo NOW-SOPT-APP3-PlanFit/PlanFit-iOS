@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31ED0BA2BFD17ED00860961 /* WorkoutListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */; };
+		A31ED0BC2BFD1A0F00860961 /* WorkoutListFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */; };
 		A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */; };
 		A3785BBC2BF4E21F00CB9C03 /* WorkoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListHeader.swift; sourceTree = "<group>"; };
+		A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListFooter.swift; sourceTree = "<group>"; };
 		A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewCell.swift; sourceTree = "<group>"; };
 		A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListModel.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +251,8 @@
 				DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */,
 				A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */,
 				A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */,
+				A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */,
+				A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31ED0BC2BFD1A0F00860961 /* WorkoutListFooter.swift in Sources */,
 				DE8805EB2BF36B8900283B48 /* WorkoutListView.swift in Sources */,
 				DE8805E82BF36B7800283B48 /* WorkoutListViewController.swift in Sources */,
 				DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */,
@@ -384,6 +391,7 @@
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
+				A31ED0BA2BFD17ED00860961 /* WorkoutListHeader.swift in Sources */,
 				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
