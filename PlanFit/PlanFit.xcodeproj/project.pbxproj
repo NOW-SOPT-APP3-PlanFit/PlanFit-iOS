@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		210598992BFE69C500F63967 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210598982BFE69C500F63967 /* Config.swift */; };
+		2105989B2BFE6C3400F63967 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2105989A2BFE6C3400F63967 /* NetworkResult.swift */; };
 		212078502BFE4D8000FCAED6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2120784F2BFE4D8000FCAED6 /* SnapKit */; };
 		212E8EAB2BF3D387004A7576 /* WorkoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */; };
 		212E8EAD2BF3D3CB004A7576 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		210598982BFE69C500F63967 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		2105989A2BFE6C3400F63967 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageCell.swift; sourceTree = "<group>"; };
 		212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
 		212E8EB02BF3D6F9004A7576 /* WorkoutImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageHeader.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				210598982BFE69C500F63967 /* Config.swift */,
+				2105989A2BFE6C3400F63967 /* NetworkResult.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				A31ED0BA2BFD17ED00860961 /* WorkoutListHeader.swift in Sources */,
 				A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */,
+				2105989B2BFE6C3400F63967 /* NetworkResult.swift in Sources */,
 				212E8EB32BF4D5C0004A7576 /* WorkoutImageFooter.swift in Sources */,
 				212E8EB12BF3D6F9004A7576 /* WorkoutImageHeader.swift in Sources */,
 				212E8EAD2BF3D3CB004A7576 /* WorkoutData.swift in Sources */,
