@@ -53,7 +53,7 @@ private extension ExerciseRootView {
             configuration.imagePadding = 2
             $0.configuration = configuration
             $0.setTitle("체지방 감소 추천 플랜 (초급)", font: .subtitle01, titleColor: .gray01)
-            $0.setImage(.arrowLeft, for: .normal)
+            $0.setImage(.arrowRight, for: .normal)
         }
         
         lineImageView.do {

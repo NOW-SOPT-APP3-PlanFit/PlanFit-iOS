@@ -153,6 +153,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		DE31255D2BFE50CC00E94AA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DE399C5E2BF6F6030082220A /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +276,7 @@
 		DE8805DC2BF36ADA00283B48 /* WorkoutList */ = {
 			isa = PBXGroup;
 			children = (
+				DE31255D2BFE50CC00E94AA8 /* Model */,
 				DE8805E92BF36B8000283B48 /* View */,
 				DE8805E62BF36B6800283B48 /* Controller */,
 			);
@@ -330,7 +339,6 @@
 			children = (
 				DE8805EA2BF36B8900283B48 /* WorkoutListView.swift */,
 				A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */,
-				A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */,
 				A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */,
 				A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */,
 				A31ED0BD2BFD299300860961 /* WorkoutListNavigation.swift */,
