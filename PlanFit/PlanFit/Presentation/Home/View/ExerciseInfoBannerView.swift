@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class ExerciseInfoBannerView: BannerBackgroundView {
+final class ExerciseInfoBannerView: UIView {
     
     // MARK: - UIComponent
     
@@ -46,6 +46,9 @@ final class ExerciseInfoBannerView: BannerBackgroundView {
 
 private extension ExerciseInfoBannerView {
     func setUI() {
+        backgroundColor = .gray07
+        layer.cornerRadius = 15
+        
         titleLabel.do {
             $0.setText("운동 부위", font: .body01B, color: .gray02)
         }

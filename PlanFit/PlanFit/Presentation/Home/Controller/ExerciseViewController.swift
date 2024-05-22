@@ -30,7 +30,6 @@ final class ExerciseViewController: UIViewController {
     // MARK: - LifeCycle
     
     override func loadView() {
-        super.loadView()
         view = rootView
     }
     

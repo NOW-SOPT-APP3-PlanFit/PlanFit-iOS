@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class GoalBannerView: BannerBackgroundView {
+final class GoalBannerView: UIView {
     
     // MARK: - UIComponent
     
@@ -53,7 +53,10 @@ final class GoalBannerView: BannerBackgroundView {
 // MARK: - UISetting
 
 private extension GoalBannerView {
-    func setUI() {        
+    func setUI() {
+        backgroundColor = .gray07
+        layer.cornerRadius = 15
+        
         titleLabel.do {
             $0.setText("이번 주 운동 목표는", font: .subtitle01, color: .gray01)
         }

@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-final class StartExerciseBannerView: BannerBackgroundView {
+final class StartExerciseBannerView: UIView {
     
     // MARK: - UIComponent
     
@@ -52,6 +52,9 @@ final class StartExerciseBannerView: BannerBackgroundView {
 
 private extension StartExerciseBannerView {
     func setUI() {
+        backgroundColor = .gray07
+        layer.cornerRadius = 15
+        
         firstExplanationLabel.do {
             $0.setText("주 2회 운동 중", font: .subtitle02B, color: .gray02)
         }

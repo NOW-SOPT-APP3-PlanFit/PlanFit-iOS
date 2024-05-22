@@ -97,7 +97,11 @@ extension WorkoutTimeSheetViewController: UICollectionViewDataSource {
         ) as? WorkoutTimeCell else { return UICollectionViewCell() }
         
         let time = timeKind[indexPath.row]
-        cell.dataBind(title: time.title, description: time.description, isCurrentChoice: time == userChoice)
+        cell.dataBind(
+            title: time.title,
+            description: time.description,
+            isCurrentChoice: time == userChoice
+        )
         return cell
     }
 }

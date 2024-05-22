@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DE2A4EF52BFB7C1C004D0DCA /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */; };
-		DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */; };
 		DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5A2BF6E5750082220A /* GoalBannerView.swift */; };
 		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
 		DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */; };
@@ -55,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
-		DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerBackgroundView.swift; sourceTree = "<group>"; };
 		DE399C5A2BF6E5750082220A /* GoalBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBannerView.swift; sourceTree = "<group>"; };
 		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
 		DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExerciseBannerView.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		DE399C5E2BF6F6030082220A /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
-				DE399C582BF6E43C0082220A /* BannerBackgroundView.swift */,
 				DE399C5C2BF6ED5D0082220A /* StampButton.swift */,
 				DE399C612BF6FACC0082220A /* DropDownButton.swift */,
 				DE89874F2BF743CE005638E6 /* InfoItemView.swift */,
@@ -450,7 +447,6 @@
 				DEAD02EC2BFC9D2C0008BA3F /* WorkoutTimeCell.swift in Sources */,
 				DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */,
 				DEAD02E32BFC86740008BA3F /* WorkoutTimeModel.swift in Sources */,
-				DE399C592BF6E43C0082220A /* BannerBackgroundView.swift in Sources */,
 				DE2A4EF52BFB7C1C004D0DCA /* HomeTabBarController.swift in Sources */,
 				DE8987502BF743CE005638E6 /* InfoItemView.swift in Sources */,
 				DE8805CB2BF3676000283B48 /* Then.swift in Sources */,
