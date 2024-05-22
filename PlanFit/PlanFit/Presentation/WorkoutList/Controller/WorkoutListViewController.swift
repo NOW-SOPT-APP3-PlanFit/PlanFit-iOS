@@ -21,13 +21,12 @@ final class WorkoutListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor(named: "gray08(BG)")
-        self.rootView.tableView.dragInteractionEnabled = true
-        self.rootView.tableView.dragDelegate = self
         
         register()
         setDelegate()
+        
+        setDraggable()
     }
     
     private func register() {
@@ -39,6 +38,11 @@ final class WorkoutListViewController: UIViewController {
     private func setDelegate() {
         rootView.tableView.delegate = self
         rootView.tableView.dataSource = self
+    }
+    
+    private func setDraggable() {
+        self.rootView.tableView.dragInteractionEnabled = true
+        self.rootView.tableView.dragDelegate = self
     }
 }
 
@@ -70,21 +74,38 @@ extension WorkoutListViewController: UITableViewDataSource {
         cell.dataBind(workoutList[indexPath.row])
         
         if indexPath.row == 0 || indexPath.row == workoutList.count - 1 {
-            cell.hideHamburgerIcon()
+            cell.hideHamburgerButton()
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-            let moveCell = self.workoutList[sourceIndexPath.row]
-            self.workoutList.remove(at: sourceIndexPath.row)
-            self.workoutList.insert(moveCell, at: destinationIndexPath.row)
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.row != 0 && indexPath.row != workoutList.count - 1
+    }
+    
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, 
+                   toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        if proposedDestinationIndexPath.row == 0 || proposedDestinationIndexPath.row == workoutList.count - 1 {
+            return sourceIndexPath
         }
+        return proposedDestinationIndexPath
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let moveCell = self.workoutList[sourceIndexPath.row]
+        self.workoutList.remove(at: sourceIndexPath.row)
+        self.workoutList.insert(moveCell, at: destinationIndexPath.row)
+    }
 }
 
 extension WorkoutListViewController: UITableViewDragDelegate {
-func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        return [UIDragItem(itemProvider: NSItemProvider())]
+    func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath)
+    -> [UIDragItem] {
+        if indexPath.row == 0 || indexPath.row == workoutList.count - 1 {
+            return []
+        } else {
+            return [UIDragItem(itemProvider: NSItemProvider())]
+        }
     }
 }

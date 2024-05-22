@@ -15,7 +15,9 @@ final class WorkoutListViewCell: UITableViewCell {
     
     var isExpanded = false
     
-    private let hamburgerIcon = UIImageView()
+    var isDraggable = false
+    
+    private let hamburgerButton = UIButton()
     
     private let workoutImage = UIImageView()
     
@@ -45,6 +47,7 @@ final class WorkoutListViewCell: UITableViewCell {
     
     private func setTarget() {
         arrowButton.addTarget(self, action: #selector(arrowButtonDidTap), for: .touchUpInside)
+        hamburgerButton.addTarget(self, action: #selector(hamburgerButtonDidTap), for: .touchUpInside)
     }
     
     private func updateForExpansion() {
@@ -58,8 +61,8 @@ final class WorkoutListViewCell: UITableViewCell {
         }
     }
     
-    func hideHamburgerIcon() {
-        hamburgerIcon.isHidden = true
+    func hideHamburgerButton() {
+        hamburgerButton.isHidden = true
     }
     
     @objc
@@ -67,12 +70,17 @@ final class WorkoutListViewCell: UITableViewCell {
         updateForExpansion()
         invalidateIntrinsicContentSize()
     }
+    
+    @objc
+    private func hamburgerButtonDidTap() {
+        isDraggable.toggle()
+    }
 }
 
 private extension WorkoutListViewCell {
     func setUI() {
-        hamburgerIcon.do {
-            $0.image = .hamburger
+        hamburgerButton.do {
+            $0.setImage(UIImage(named: "hamburger"), for: .normal)
         }
         nameLabel.do {
             $0.textColor = .gray01
@@ -94,7 +102,7 @@ private extension WorkoutListViewCell {
     
     func setViewHierarchy() {
         contentView.addSubviews(
-            hamburgerIcon,
+            hamburgerButton,
             workoutImage,
             nameLabel,
             captionLabel,
@@ -104,7 +112,7 @@ private extension WorkoutListViewCell {
     }
     
     func setAutoLayout() {
-        hamburgerIcon.snp.makeConstraints {
+        hamburgerButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(30)
             $0.leading.equalToSuperview().offset(11)
             $0.size.equalTo(24)
