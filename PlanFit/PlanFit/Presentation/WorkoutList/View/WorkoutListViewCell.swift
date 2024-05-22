@@ -100,6 +100,7 @@ private extension WorkoutListViewCell {
             $0.textAlignment = .left
             $0.numberOfLines = 6
             $0.font = UIFont.neoFont(for: .caption02)
+            $0.isHidden = true
         }
     }
     
@@ -136,7 +137,8 @@ private extension WorkoutListViewCell {
         }
         additionalInfoLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(88)
-            $0.bottom.lessThanOrEqualToSuperview().offset(-8)
+            //$0.bottom.lessThanOrEqualToSuperview().offset(-8)
+            $0.bottom.equalToSuperview().offset(-8).priority(.low)
             $0.leading.equalToSuperview().offset(124)
         }
         arrowButton.snp.makeConstraints {
