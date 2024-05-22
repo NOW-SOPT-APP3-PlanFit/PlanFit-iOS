@@ -21,7 +21,7 @@ final class WorkoutListViewCell: UITableViewCell {
     
     // MARK: - UIComponent
     
-    private let hamburgerButton = UIButton()
+    private lazy var hamburgerButton = UIButton()
     
     private let workoutImage = UIImageView()
     
@@ -31,13 +31,13 @@ final class WorkoutListViewCell: UITableViewCell {
     
     private lazy var additionalInfoLabel = UILabel()
     
-    private let arrowButton = UIButton()
+    private lazy var arrowButton = UIButton()
     
     // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor(named: "gray08(BG)")
+        self.backgroundColor = .gray08BG
         
         setUI()
         setViewHierarchy()

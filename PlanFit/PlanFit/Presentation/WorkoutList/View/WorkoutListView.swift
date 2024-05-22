@@ -23,7 +23,7 @@ final class WorkoutListView: UIView {
     
     private let buttonBackGradiant = UIImageView()
     
-    private let startButton = UIButton()
+    private lazy var startButton = UIButton()
 
     // MARK: - Initializer
     
@@ -45,9 +45,12 @@ final class WorkoutListView: UIView {
 
 private extension WorkoutListView {
     
-    private func setUI() {
+    func setUI() {
+        self.do {
+            $0.backgroundColor = .gray08BG
+        }
         tableView.do {
-            $0.backgroundColor = UIColor(named: "gray08(BG)")
+            $0.backgroundColor = .gray08BG
             $0.showsVerticalScrollIndicator = false
             $0.tableHeaderView = header
             $0.tableFooterView = footer
@@ -62,11 +65,11 @@ private extension WorkoutListView {
         }
     }
     
-    private func setViewHierarchy() {
+    func setViewHierarchy() {
         self.addSubviews(navigationBar, tableView, buttonBackGradiant, startButton)
     }
     
-    private func setAutoLayout() {
+    func setAutoLayout() {
         navigationBar.snp.makeConstraints() {
             $0.top.leading.trailing.equalTo(safeAreaLayoutGuide)
             $0.height.equalTo(48)

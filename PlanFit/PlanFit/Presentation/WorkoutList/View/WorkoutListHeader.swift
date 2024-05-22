@@ -47,7 +47,7 @@ final class WorkoutListHeader: UIView {
 
 private extension WorkoutListHeader {
     
-    private func setUI() {
+    func setUI() {
         self.do {
             $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 44)
         }
@@ -78,12 +78,12 @@ private extension WorkoutListHeader {
         }
     }
     
-    private func setViewHierarchy() {
+    func setViewHierarchy() {
         self.addSubviews(totalNumberLabel, headerSeperator, totalTimeIcon, totalTimeLabel,
             superSetIcon, superSetLabel, superSetSwitch)
     }
     
-    private func setAutoLayout() {
+    func setAutoLayout() {
         totalNumberLabel.snp.makeConstraints() {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().offset(20)

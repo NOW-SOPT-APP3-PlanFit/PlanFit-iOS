@@ -25,11 +25,9 @@ final class WorkoutListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(named: "gray08(BG)")
         
         register()
         setDelegate()
-        
         setDraggable()
     }
     

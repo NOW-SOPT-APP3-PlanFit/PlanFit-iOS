@@ -37,7 +37,7 @@ final class WorkoutListFooter: UIView {
 
 private extension WorkoutListFooter {
     
-    private func setUI() {
+    func setUI() {
         self.do {
             $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 180)
         }
@@ -49,11 +49,11 @@ private extension WorkoutListFooter {
         }
     }
     
-    private func setViewHierarchy() {
+    func setViewHierarchy() {
         self.addSubviews(footerIcon, footerLabel)
     }
     
-    private func setAutoLayout() {
+    func setAutoLayout() {
         footerIcon.snp.makeConstraints {
             $0.top.equalToSuperview().offset(16)
             $0.leading.equalToSuperview().offset(20)

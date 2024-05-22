@@ -15,9 +15,9 @@ final class WorkoutListNavigation: UIView {
     
     private let title = UILabel()
     
-    private let backButton = UIButton()
+    private lazy var backButton = UIButton()
     
-    private let shareButton = UIButton()
+    private lazy var shareButton = UIButton()
     
     // MARK: - Initializer
     
@@ -39,10 +39,10 @@ final class WorkoutListNavigation: UIView {
 
 private extension WorkoutListNavigation {
     
-    private func setUI() {
+    func setUI() {
         self.do {
             $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 48)
-            $0.backgroundColor = UIColor(named: "gray08(BG)")
+            $0.backgroundColor = .gray08BG
         }
         title.do {
             $0.setText("오늘의 추천 운동", font: .subtitle01, color: .gray01)
@@ -56,11 +56,11 @@ private extension WorkoutListNavigation {
         }
     }
     
-    private func setViewHierarchy() {
+    func setViewHierarchy() {
         self.addSubviews(title, backButton, shareButton)
     }
     
-    private func setAutoLayout() {
+    func setAutoLayout() {
         title.snp.makeConstraints() {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
