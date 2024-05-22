@@ -15,7 +15,7 @@ class WorkoutSetFooter: UICollectionReusableView, ReuseIdentifiable {
     
     let addSetStackView = UIStackView()
     
-    private let plusImage = UIImageView()
+    private let plusImageView = UIImageView()
     
     private let addSetLabel = UILabel()
     
@@ -44,9 +44,9 @@ class WorkoutSetFooter: UICollectionReusableView, ReuseIdentifiable {
 
 private extension WorkoutSetFooter {
     func setUI() {
-        plusImage.do { $0.image = UIImage(resource: .plus) }
+        plusImageView.do { $0.image = UIImage(resource: .plus) }
         
-        addSetLabel.do { $0.setText("세트 추가", font: .body01B, color: .gray02)}
+        addSetLabel.do { $0.setText("세트 추가", font: .body01B, color: .gray02) }
         
         addSetStackView.do {
             $0.axis = .horizontal
@@ -64,7 +64,7 @@ private extension WorkoutSetFooter {
     }
     
     func setViewHierarchy() {
-        addSetStackView.addArrangedSubviews(plusImage, addSetLabel)
+        addSetStackView.addArrangedSubviews(plusImageView, addSetLabel)
         
         setModifyView.addSubviews(pencilImage, setModifyLabel)
         
@@ -72,7 +72,7 @@ private extension WorkoutSetFooter {
     }
     
     func setAutoLayout() {
-        plusImage.snp.makeConstraints { $0.width.height.equalTo(16) }
+        plusImageView.snp.makeConstraints { $0.width.height.equalTo(16) }
         
         addSetStackView.snp.makeConstraints { $0.top.leading.equalToSuperview().offset(16) }
         

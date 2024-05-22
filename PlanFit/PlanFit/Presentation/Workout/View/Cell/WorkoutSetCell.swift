@@ -133,9 +133,9 @@ extension WorkoutSetCell {
         weight.text = String(data.weight)
         repsNum.text = String(data.repsNum)
         
-        if data.completedSet {
+        if data.state == .completed {
             completedSetAttributes()
-        } else if data.currentSet {
+        } else if data.state == .inProgress {
             currentSetAttributes()
         } else {
             setInitialAttributes()

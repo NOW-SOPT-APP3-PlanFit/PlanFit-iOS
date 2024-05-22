@@ -11,12 +11,12 @@ class StopwatchView: UIView {
     
     // MARK: - UI Component
     
-     let currentTimeOnAirDot = UIImageView()
+    let currentTimeOnAirDot = UIImageView()
     
     let currentTimePlayImage = UIImageView()
     
     private let currentTimeLabel = UILabel()
-
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -57,7 +57,7 @@ private extension StopwatchView {
     }
     
     func setViewHierarchy() {
-       addSubviews(currentTimeOnAirDot, currentTimeLabel, currentTimePlayImage)
+        addSubviews(currentTimeOnAirDot, currentTimeLabel, currentTimePlayImage)
     }
     
     func setAutoLayout() {

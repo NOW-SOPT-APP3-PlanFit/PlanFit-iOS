@@ -27,7 +27,11 @@ class WorkoutViewController: UIViewController {
     
     private let workoutImageData = WorkoutImageData.list
     
-    private var setVolumeList = SetVolume.list
+    private var setVolumeList = SetVolume.list {
+        didSet {
+            applySectionItems()
+        }
+    }
     
     private var currentSet = IndexPath(item: 0, section: 1)
     
@@ -283,15 +287,14 @@ class WorkoutViewController: UIViewController {
     private func addSetDidtap() {
         guard setVolumeList.count < 30 else { return }
         
-        if setVolumeList.last?.completedSet == true {
-            let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: true, completedSet: false)
+        if setVolumeList.last?.state == .completed {
+            let setVolume = SetVolume(weight: 8, repsNum: 15, state: .inProgress)
             setVolumeList.append(setVolume)
             setCompletedSetNum(setVolumeList.count)
         } else {
-            let setVolume = SetVolume(weight: 8, repsNum: 15, currentSet: false, completedSet: false)
+            let setVolume = SetVolume(weight: 8, repsNum: 15, state: .initial)
             setVolumeList.append(setVolume)
         }
-        applySectionItems()
     }
     
     private func setCompleteSetBtn() {
@@ -303,8 +306,7 @@ class WorkoutViewController: UIViewController {
         guard currentSet.item < setVolumeList.count else { return }
         
         guard let currentCell = rootView.collectionView.cellForItem(at: currentSet) as? WorkoutSetCell else { return }
-        setVolumeList[currentSet.item].completedSet = true
-        setVolumeList[currentSet.item].currentSet = false
+        setVolumeList[currentSet.item].state = .completed
         currentCell.completedSetAttributes()
         setCompletedSetNum(currentSet.item + 2)
         
@@ -314,10 +316,8 @@ class WorkoutViewController: UIViewController {
             setCompletedSetNum(nil)
             return
         }
-        setVolumeList[currentSet.item].currentSet = true
+        setVolumeList[currentSet.item].state = .inProgress
         nextCell.currentSetAttributes()
-        
-        applySectionItems()
     }
     
     private func setCompletedSetNum(_ completedSet: Int?) {
