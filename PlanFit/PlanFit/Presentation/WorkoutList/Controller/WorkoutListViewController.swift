@@ -29,6 +29,7 @@ final class WorkoutListViewController: UIViewController {
         register()
         setDelegate()
         setDraggable()
+        setTarget()
     }
     
     // MARK: - TableView Setting
@@ -117,5 +118,29 @@ extension WorkoutListViewController: UITableViewDragDelegate {
         } else {
             return [UIDragItem(itemProvider: NSItemProvider())]
         }
+    }
+}
+
+// MARK: - Screen Navigation
+
+private extension WorkoutListViewController {
+    func setTarget() {
+        let backButton = rootView.navigationBar.backButton
+        backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+        
+        let startButton = rootView.startButton
+        startButton.addTarget(self, action: #selector(startButtonDidTap), for: .touchUpInside)
+    }
+    
+    @objc
+    func backButtonDidTap(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func startButtonDidTap(_ sender: UIButton) {
+        
+        // TODO: 스트레칭 화면으로 네비게이션 Push
+        
     }
 }
