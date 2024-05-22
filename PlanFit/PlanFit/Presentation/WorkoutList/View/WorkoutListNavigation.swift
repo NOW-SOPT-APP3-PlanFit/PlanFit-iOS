@@ -11,11 +11,15 @@ import SnapKit
 
 final class WorkoutListNavigation: UIView {
     
+    // MARK: - UIComponent
+    
     private let title = UILabel()
     
     private let backButton = UIButton()
     
     private let shareButton = UIButton()
+    
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +34,8 @@ final class WorkoutListNavigation: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutListNavigation {
     

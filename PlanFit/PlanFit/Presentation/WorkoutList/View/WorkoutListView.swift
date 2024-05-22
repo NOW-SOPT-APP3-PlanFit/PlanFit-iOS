@@ -11,6 +11,8 @@ import SnapKit
 
 final class WorkoutListView: UIView {
     
+    // MARK: - UIComponent
+    
     let tableView = UITableView(frame: .zero, style: .plain)
     
     private let navigationBar = WorkoutListNavigation()
@@ -23,6 +25,8 @@ final class WorkoutListView: UIView {
     
     private let startButton = UIButton()
 
+    // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -36,6 +40,8 @@ final class WorkoutListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutListView {
     

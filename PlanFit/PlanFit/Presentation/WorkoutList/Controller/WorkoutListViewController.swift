@@ -11,9 +11,13 @@ import SnapKit
 
 final class WorkoutListViewController: UIViewController {
     
+    // MARK: - Property
+    
     private let rootView = WorkoutListView()
     
     private var workoutList = WorkoutListModel.dummy()
+    
+    // MARK: - LifeCycle
     
     override func loadView() {
         self.view = rootView
@@ -28,6 +32,8 @@ final class WorkoutListViewController: UIViewController {
         
         setDraggable()
     }
+    
+    // MARK: - TableView Setting
     
     private func register() {
         rootView.tableView.register(
@@ -46,6 +52,8 @@ final class WorkoutListViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension WorkoutListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 || indexPath.row == (tableView.numberOfRows(inSection: indexPath.section) - 1) {
@@ -58,6 +66,8 @@ extension WorkoutListViewController: UITableViewDelegate {
         return 82
     }
 }
+
+// MARK: - UITableViewDataSource
 
 extension WorkoutListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -98,6 +108,8 @@ extension WorkoutListViewController: UITableViewDataSource {
         self.workoutList.insert(moveCell, at: destinationIndexPath.row)
     }
 }
+
+// MARK: - UITableViewDragDelegate
 
 extension WorkoutListViewController: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath)

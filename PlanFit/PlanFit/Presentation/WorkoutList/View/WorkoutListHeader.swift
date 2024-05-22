@@ -11,6 +11,8 @@ import SnapKit
 
 final class WorkoutListHeader: UIView {
     
+    // MARK: - UIComponent
+    
     private let headerSeperator = UIImageView()
     
     private let totalNumberLabel = UILabel()
@@ -25,6 +27,8 @@ final class WorkoutListHeader: UIView {
     
     private let superSetSwitch = UISwitch()
     
+    // MARK: - Initializer
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -38,6 +42,8 @@ final class WorkoutListHeader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutListHeader {
     

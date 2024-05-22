@@ -11,9 +11,13 @@ import SnapKit
 
 final class WorkoutListFooter: UIView {
     
+    // MARK: - UIComponent
+    
     private let footerIcon = UIImageView()
     
     private let footerLabel = UILabel()
+    
+    // MARK: - Initializer
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,6 +32,8 @@ final class WorkoutListFooter: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutListFooter {
     

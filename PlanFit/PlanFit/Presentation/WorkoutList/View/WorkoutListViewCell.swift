@@ -11,11 +11,15 @@ import SnapKit
 
 final class WorkoutListViewCell: UITableViewCell {
     
+    // MARK: - Property
+    
     static let identifier = "WorkoutListViewCell"
     
     var isExpanded = false
     
     var isDraggable = false
+    
+    // MARK: - UIComponent
     
     private let hamburgerButton = UIButton()
     
@@ -28,6 +32,8 @@ final class WorkoutListViewCell: UITableViewCell {
     private lazy var additionalInfoLabel = UILabel()
     
     private let arrowButton = UIButton()
+    
+    // MARK: - Initializer
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -44,6 +50,8 @@ final class WorkoutListViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Action
     
     private func setTarget() {
         arrowButton.addTarget(self, action: #selector(arrowButtonDidTap), for: .touchUpInside)
@@ -76,6 +84,8 @@ final class WorkoutListViewCell: UITableViewCell {
         isDraggable.toggle()
     }
 }
+
+// MARK: - UI Setting
 
 private extension WorkoutListViewCell {
     func setUI() {
@@ -143,6 +153,8 @@ private extension WorkoutListViewCell {
         }
     }
 }
+
+// MARK: - Data Bind
 
 extension WorkoutListViewCell {
     func dataBind (_ data: WorkoutListModel) {
