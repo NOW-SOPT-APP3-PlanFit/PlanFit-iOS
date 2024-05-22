@@ -66,8 +66,7 @@ private extension WorkoutListHeader {
             $0.textAlignment = .center
         }
         superSetIcon.do {
-            //$0.image = .toolTip
-            $0.image = .clock
+            $0.image = .tooltip
         }
         superSetLabel.do {
             $0.setText("슈퍼세트", font: .body01, color: .gray02)
