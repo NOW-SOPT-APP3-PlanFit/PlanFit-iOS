@@ -42,7 +42,8 @@ private extension WorkoutListFooter {
             $0.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: 180)
         }
         footerIcon.do {
-            $0.image = .plus
+            //$0.image = .plus
+            $0.image = .clock
         }
         footerLabel.do {
             $0.setText("운동 추가하기", font: .subtitle02B, color: .gray02)

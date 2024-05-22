@@ -64,7 +64,7 @@ final class WorkoutListViewCell: UITableViewCell {
             arrowButton.setImage(UIImage.arrowTop, for: .normal)
             additionalInfoLabel.isHidden = false
         } else {
-            arrowButton.setImage(UIImage.arrowDown, for: .normal)
+            //arrowButton.setImage(UIImage.arrowDown, for: .normal)
             additionalInfoLabel.isHidden = true
         }
     }
@@ -161,7 +161,7 @@ extension WorkoutListViewCell {
         nameLabel.text = data.nameLabel
         workoutImage.image = data.workoutImage
         captionLabel.text = data.captionLabel
-        arrowButton.setImage(data.arrowButton, for: .normal)
+        //arrowButton.setImage(data.arrowButton, for: .normal)
         additionalInfoLabel.text = data.additionalInfoLabel
     }
 }
