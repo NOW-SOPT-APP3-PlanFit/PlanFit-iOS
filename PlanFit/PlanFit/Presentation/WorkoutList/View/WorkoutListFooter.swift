@@ -50,7 +50,7 @@ private extension WorkoutListFooter {
     }
     
     func setViewHierarchy() {
-        self.addSubviews(footerIcon, footerLabel)
+        addSubviews(footerIcon, footerLabel)
     }
     
     func setAutoLayout() {

@@ -57,7 +57,7 @@ private extension WorkoutListNavigation {
     }
     
     func setViewHierarchy() {
-        self.addSubviews(title, backButton, shareButton)
+        addSubviews(title, backButton, shareButton)
     }
     
     func setAutoLayout() {

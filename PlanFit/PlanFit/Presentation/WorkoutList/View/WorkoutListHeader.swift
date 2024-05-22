@@ -79,7 +79,7 @@ private extension WorkoutListHeader {
     }
     
     func setViewHierarchy() {
-        self.addSubviews(totalNumberLabel, headerSeperator, totalTimeIcon, totalTimeLabel,
+        addSubviews(totalNumberLabel, headerSeperator, totalTimeIcon, totalTimeLabel,
             superSetIcon, superSetLabel, superSetSwitch)
     }
     
