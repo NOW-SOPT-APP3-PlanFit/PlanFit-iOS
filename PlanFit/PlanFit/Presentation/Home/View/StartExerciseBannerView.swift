@@ -13,6 +13,10 @@ final class StartExerciseBannerView: UIView {
     
     // MARK: - UIComponent
     
+    let timeDropDownButton = DropDownButton()
+    
+    let conditionsDropDownButton = DropDownButton()
+    
     private let firstExplanationLabel = UILabel()
     
     private let sessionsDropDownButton = DropDownButton()
@@ -21,13 +25,9 @@ final class StartExerciseBannerView: UIView {
     
     private let firstContentStackView = UIStackView(axis: .horizontal)
     
-    let timeDropDownButton = DropDownButton()
-    
     private let thirdExplanationLabel = UILabel()
     
     private let secondContentStackView = UIStackView(axis: .horizontal)
-    
-    let conditionsDropDownButton = DropDownButton()
     
     private let lastExplanationLabel = UILabel()
     

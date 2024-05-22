@@ -13,6 +13,8 @@ final class ExerciseInfoBannerView: UIView {
     
     // MARK: - UIComponent
     
+    let startExerciseButton = UIButton()
+    
     private let titleLabel = UILabel()
     
     private let explanationLabel = UILabel()
@@ -24,8 +26,6 @@ final class ExerciseInfoBannerView: UIView {
     private let caloriesItem = InfoItemView()
     
     private let infoItemStackView = UIStackView(axis: .horizontal)
-    
-    let startExerciseButton = UIButton()
     
     // MARK: - Initializer
     
