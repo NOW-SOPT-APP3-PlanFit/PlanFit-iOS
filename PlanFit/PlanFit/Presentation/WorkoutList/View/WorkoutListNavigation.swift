@@ -13,11 +13,11 @@ final class WorkoutListNavigation: UIView {
     
     // MARK: - UIComponent
     
+    let backButton = UIButton()
+    
     private let title = UILabel()
     
-    private lazy var backButton = UIButton()
-    
-    private lazy var shareButton = UIButton()
+    private let shareButton = UIButton()
     
     // MARK: - Initializer
     
