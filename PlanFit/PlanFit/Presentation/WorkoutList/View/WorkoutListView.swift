@@ -13,17 +13,17 @@ final class WorkoutListView: UIView {
     
     // MARK: - UIComponent
     
+    let navigationBar = WorkoutListNavigation()
+    
     let tableView = UITableView(frame: .zero, style: .plain)
     
-    private let navigationBar = WorkoutListNavigation()
+    let startButton = UIButton()
     
     private let header = WorkoutListHeader()
     
     private let footer = WorkoutListFooter()
     
     private let buttonBackGradiant = UIImageView()
-    
-    private lazy var startButton = UIButton()
 
     // MARK: - Initializer
     

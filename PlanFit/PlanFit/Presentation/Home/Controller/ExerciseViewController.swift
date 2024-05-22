@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ExerciseNavigationDelegate: AnyObject {
+    func moveToWorkoutList()
+}
+
 final class ExerciseViewController: UIViewController {
     
     // MARK: - UIComponent
@@ -14,6 +18,8 @@ final class ExerciseViewController: UIViewController {
     private let rootView = ExerciseRootView()
     
     // MARK: - Property
+    
+    private weak var delegate: ExerciseNavigationDelegate?
     
     private var timeChoice = WorkoutTimeModel.normal {
         didSet {
@@ -25,6 +31,17 @@ final class ExerciseViewController: UIViewController {
         didSet {
             configureConditionDropDown(conditionChoice.value)
         }
+    }
+    
+    // MARK: - Initializer
+    
+    init(delegate: ExerciseNavigationDelegate) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - LifeCycle
@@ -67,9 +84,7 @@ final class ExerciseViewController: UIViewController {
     
     @objc
     private func startExerciseButtonDidTap(_ sender: UIButton) {
-        
-        // TODO: 다음 화면 (운동 리스트) 화면으로 넘어가기
-        
+        delegate?.moveToWorkoutList()
     }
 }
 

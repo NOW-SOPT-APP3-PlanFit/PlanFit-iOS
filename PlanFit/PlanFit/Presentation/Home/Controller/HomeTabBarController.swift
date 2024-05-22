@@ -18,6 +18,15 @@ final class HomeTabBarController: UITabBarController {
     }
 }
 
+// MARK: - ExerciseNavigationDelegate
+
+extension HomeTabBarController: ExerciseNavigationDelegate {
+    func moveToWorkoutList() {
+        let viewController = WorkoutListViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
 // MARK: - UISetting
 
 private extension HomeTabBarController {
@@ -40,7 +49,7 @@ private extension HomeTabBarController {
         ]
         
         let rootViewControllers = [
-            ExerciseViewController(),
+            ExerciseViewController(delegate: self),
             ViewController(),
             ViewController(),
             ViewController()
@@ -58,6 +67,9 @@ private extension HomeTabBarController {
             item.setTitleTextAttributes(attributes, for: .selected)
             
             viewController.tabBarItem = item
+            if viewController === ExerciseViewController.self {
+                return viewController
+            }
             return UINavigationController(rootViewController: viewController)
         }
     }
