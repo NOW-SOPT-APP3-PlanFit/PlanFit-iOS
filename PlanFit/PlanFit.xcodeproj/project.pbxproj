@@ -21,6 +21,7 @@
 		A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */; };
 		A3785BBC2BF4E21F00CB9C03 /* WorkoutListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */; };
 		DE2A4EF52BFB7C1C004D0DCA /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */; };
+		DE31255F2BFE527A00E94AA8 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE31255E2BFE527A00E94AA8 /* UIView+.swift */; };
 		DE399C5B2BF6E5750082220A /* GoalBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5A2BF6E5750082220A /* GoalBannerView.swift */; };
 		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
 		DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */; };
@@ -35,7 +36,6 @@
 		DE8805BA2BF3611600283B48 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805B92BF3611600283B48 /* UILabel+.swift */; };
 		DE8805BC2BF3612700283B48 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BB2BF3612700283B48 /* UIButton+.swift */; };
 		DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BD2BF3619300283B48 /* UITextField+.swift */; };
-		DE8805C02BF362A700283B48 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805BF2BF362A700283B48 /* UIView+.swift */; };
 		DE8805C22BF362DA00283B48 /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C12BF362DA00283B48 /* UIStackView+.swift */; };
 		DE8805C42BF3644C00283B48 /* PlanFitColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */; };
 		DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */; };
@@ -77,6 +77,7 @@
 		A3785BB92BF4DA9900CB9C03 /* WorkoutListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewCell.swift; sourceTree = "<group>"; };
 		A3785BBB2BF4E21F00CB9C03 /* WorkoutListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListModel.swift; sourceTree = "<group>"; };
 		DE2A4EF42BFB7C1C004D0DCA /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		DE31255E2BFE527A00E94AA8 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DE399C5A2BF6E5750082220A /* GoalBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalBannerView.swift; sourceTree = "<group>"; };
 		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
 		DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExerciseBannerView.swift; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		DE8805B92BF3611600283B48 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		DE8805BB2BF3612700283B48 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		DE8805BD2BF3619300283B48 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
-		DE8805BF2BF362A700283B48 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		DE8805C12BF362DA00283B48 /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 		DE8805C32BF3644C00283B48 /* PlanFitColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PlanFitColor.xcassets; sourceTree = "<group>"; };
 		DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 				DE8805B92BF3611600283B48 /* UILabel+.swift */,
 				DE8805BB2BF3612700283B48 /* UIButton+.swift */,
 				DE8805BD2BF3619300283B48 /* UITextField+.swift */,
-				DE8805BF2BF362A700283B48 /* UIView+.swift */,
 				DE8805C12BF362DA00283B48 /* UIStackView+.swift */,
+				DE31255E2BFE527A00E94AA8 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -502,6 +502,7 @@
 				DE8805EF2BF36B9D00283B48 /* WarmUpViewController.swift in Sources */,
 				DE8805E02BF36B2E00283B48 /* ExerciseViewController.swift in Sources */,
 				DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */,
+				DE31255F2BFE527A00E94AA8 /* UIView+.swift in Sources */,
 				DE8805F52BF36BBF00283B48 /* WorkoutViewController.swift in Sources */,
 				A3785BBC2BF4E21F00CB9C03 /* WorkoutListModel.swift in Sources */,
 				DEAD02E72BFC891B0008BA3F /* WorkoutTimeSheetViewController.swift in Sources */,
@@ -516,12 +517,10 @@
 				DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */,
 				DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */,
 				A31ED0BA2BFD17ED00860961 /* WorkoutListHeader.swift in Sources */,
-				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				A3785BBA2BF4DA9900CB9C03 /* WorkoutListViewCell.swift in Sources */,
 				212E8EB32BF4D5C0004A7576 /* WorkoutImageFooter.swift in Sources */,
 				212E8EB12BF3D6F9004A7576 /* WorkoutImageHeader.swift in Sources */,
 				212E8EAD2BF3D3CB004A7576 /* WorkoutData.swift in Sources */,
-				DE8805C02BF362A700283B48 /* UIView+.swift in Sources */,
 				DE89874E2BF73FD9005638E6 /* ExerciseInfoBannerView.swift in Sources */,
 				DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */,
 				DE8805BE2BF3619300283B48 /* UITextField+.swift in Sources */,
