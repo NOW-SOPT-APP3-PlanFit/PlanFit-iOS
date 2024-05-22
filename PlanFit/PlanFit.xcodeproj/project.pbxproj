@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212078502BFE4D8000FCAED6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2120784F2BFE4D8000FCAED6 /* SnapKit */; };
+		212E8EAB2BF3D387004A7576 /* WorkoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */; };
+		212E8EAD2BF3D3CB004A7576 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */; };
+		212E8EB12BF3D6F9004A7576 /* WorkoutImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB02BF3D6F9004A7576 /* WorkoutImageHeader.swift */; };
+		212E8EB32BF4D5C0004A7576 /* WorkoutImageFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */; };
+		212E8EB52BF4F38D004A7576 /* WorkoutSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */; };
+		212E8EB72BF50BD2004A7576 /* WorkoutSetFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */; };
+		21E4CF322BF5C98A0017EEF4 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */; };
 		A31ED0BA2BFD17ED00860961 /* WorkoutListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */; };
 		A31ED0BC2BFD1A0F00860961 /* WorkoutListFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */; };
 		A31ED0BE2BFD299300860961 /* WorkoutListNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31ED0BD2BFD299300860961 /* WorkoutListNavigation.swift */; };
@@ -17,13 +25,6 @@
 		DE399C5D2BF6ED5D0082220A /* StampButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5C2BF6ED5D0082220A /* StampButton.swift */; };
 		DE399C602BF6FA500082220A /* StartExerciseBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */; };
 		DE399C622BF6FACC0082220A /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE399C612BF6FACC0082220A /* DropDownButton.swift */; };
-		212E8EAB2BF3D387004A7576 /* WorkoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */; };
-		212E8EAD2BF3D3CB004A7576 /* WorkoutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */; };
-		212E8EB12BF3D6F9004A7576 /* WorkoutImageHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB02BF3D6F9004A7576 /* WorkoutImageHeader.swift */; };
-		212E8EB32BF4D5C0004A7576 /* WorkoutImageFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */; };
-		212E8EB52BF4F38D004A7576 /* WorkoutSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */; };
-		212E8EB72BF50BD2004A7576 /* WorkoutSetFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */; };
-		21E4CF322BF5C98A0017EEF4 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */; };
 		DE88059B2BF3595E00283B48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059A2BF3595E00283B48 /* AppDelegate.swift */; };
 		DE88059D2BF3595E00283B48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059C2BF3595E00283B48 /* SceneDelegate.swift */; };
 		DE88059F2BF3595E00283B48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88059E2BF3595E00283B48 /* ViewController.swift */; };
@@ -40,8 +41,6 @@
 		DE8805C72BF366F300283B48 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C62BF366F300283B48 /* ReuseIdentifiable.swift */; };
 		DE8805C92BF3670D00283B48 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805C82BF3670D00283B48 /* Screen.swift */; };
 		DE8805CB2BF3676000283B48 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8805CA2BF3676000283B48 /* Then.swift */; };
-		DE8805CE2BF368FC00283B48 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805CD2BF368FC00283B48 /* SnapKit */; };
-		DE8805D02BF368FC00283B48 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805CF2BF368FC00283B48 /* SnapKit-Dynamic */; };
 		DE8805D32BF3691400283B48 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D22BF3691400283B48 /* CombineMoya */; };
 		DE8805D52BF3691400283B48 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D42BF3691400283B48 /* Moya */; };
 		DE8805D72BF3691400283B48 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = DE8805D62BF3691400283B48 /* ReactiveMoya */; };
@@ -65,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageCell.swift; sourceTree = "<group>"; };
+		212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
+		212E8EB02BF3D6F9004A7576 /* WorkoutImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageHeader.swift; sourceTree = "<group>"; };
+		212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageFooter.swift; sourceTree = "<group>"; };
+		212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetCell.swift; sourceTree = "<group>"; };
+		212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetFooter.swift; sourceTree = "<group>"; };
+		21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		A31ED0B92BFD17ED00860961 /* WorkoutListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListHeader.swift; sourceTree = "<group>"; };
 		A31ED0BB2BFD1A0F00860961 /* WorkoutListFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListFooter.swift; sourceTree = "<group>"; };
 		A31ED0BD2BFD299300860961 /* WorkoutListNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListNavigation.swift; sourceTree = "<group>"; };
@@ -75,13 +81,6 @@
 		DE399C5C2BF6ED5D0082220A /* StampButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampButton.swift; sourceTree = "<group>"; };
 		DE399C5F2BF6FA500082220A /* StartExerciseBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartExerciseBannerView.swift; sourceTree = "<group>"; };
 		DE399C612BF6FACC0082220A /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
-		212E8EAA2BF3D387004A7576 /* WorkoutImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageCell.swift; sourceTree = "<group>"; };
-		212E8EAC2BF3D3CB004A7576 /* WorkoutData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutData.swift; sourceTree = "<group>"; };
-		212E8EB02BF3D6F9004A7576 /* WorkoutImageHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageHeader.swift; sourceTree = "<group>"; };
-		212E8EB22BF4D5C0004A7576 /* WorkoutImageFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImageFooter.swift; sourceTree = "<group>"; };
-		212E8EB42BF4F38D004A7576 /* WorkoutSetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetCell.swift; sourceTree = "<group>"; };
-		212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSetFooter.swift; sourceTree = "<group>"; };
-		21E4CF312BF5C98A0017EEF4 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		DE8805972BF3595E00283B48 /* PlanFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE88059A2BF3595E00283B48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE88059C2BF3595E00283B48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,27 +123,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE8805D92BF3691400283B48 /* RxMoya in Frameworks */,
-				DE8805CE2BF368FC00283B48 /* SnapKit in Frameworks */,
-				DE8805D02BF368FC00283B48 /* SnapKit-Dynamic in Frameworks */,
 				DE8805D52BF3691400283B48 /* Moya in Frameworks */,
 				DE8805D72BF3691400283B48 /* ReactiveMoya in Frameworks */,
 				DE8805D32BF3691400283B48 /* CombineMoya in Frameworks */,
+				212078502BFE4D8000FCAED6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DE399C5E2BF6F6030082220A /* UIComponent */ = {
-			isa = PBXGroup;
-			children = (
-				DE399C5C2BF6ED5D0082220A /* StampButton.swift */,
-				DE399C612BF6FACC0082220A /* DropDownButton.swift */,
-				DE89874F2BF743CE005638E6 /* InfoItemView.swift */,
-			);
-			path = UIComponent;
-      sourceTree = "<group>";
-		};
 		212E8EAE2BF3D3D0004A7576 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +151,16 @@
 				212E8EB62BF50BD2004A7576 /* WorkoutSetFooter.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE399C5E2BF6F6030082220A /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DE399C5C2BF6ED5D0082220A /* StampButton.swift */,
+				DE399C612BF6FACC0082220A /* DropDownButton.swift */,
+				DE89874F2BF743CE005638E6 /* InfoItemView.swift */,
+			);
+			path = UIComponent;
 			sourceTree = "<group>";
 		};
 		DE88058E2BF3595E00283B48 = {
@@ -409,12 +407,11 @@
 			);
 			name = PlanFit;
 			packageProductDependencies = (
-				DE8805CD2BF368FC00283B48 /* SnapKit */,
-				DE8805CF2BF368FC00283B48 /* SnapKit-Dynamic */,
 				DE8805D22BF3691400283B48 /* CombineMoya */,
 				DE8805D42BF3691400283B48 /* Moya */,
 				DE8805D62BF3691400283B48 /* ReactiveMoya */,
 				DE8805D82BF3691400283B48 /* RxMoya */,
+				2120784F2BFE4D8000FCAED6 /* SnapKit */,
 			);
 			productName = PlanFit;
 			productReference = DE8805972BF3595E00283B48 /* PlanFit.app */;
@@ -445,8 +442,8 @@
 			);
 			mainGroup = DE88058E2BF3595E00283B48;
 			packageReferences = (
-				DE8805CC2BF368FC00283B48 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DE8805D12BF3691400283B48 /* XCRemoteSwiftPackageReference "Moya" */,
+				2120784E2BFE4D8000FCAED6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DE8805982BF3595E00283B48 /* Products */;
 			projectDirPath = "";
@@ -746,9 +743,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DE8805CC2BF368FC00283B48 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		2120784E2BFE4D8000FCAED6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
@@ -765,15 +762,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DE8805CD2BF368FC00283B48 /* SnapKit */ = {
+		2120784F2BFE4D8000FCAED6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DE8805CC2BF368FC00283B48 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 2120784E2BFE4D8000FCAED6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		DE8805CF2BF368FC00283B48 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DE8805CC2BF368FC00283B48 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 		DE8805D22BF3691400283B48 /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
