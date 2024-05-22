@@ -18,6 +18,8 @@ final class HomeTabBarController: UITabBarController {
     }
 }
 
+// MARK: - ExerciseNavigationDelegate
+
 extension HomeTabBarController: ExerciseNavigationDelegate {
     func moveToWorkoutList() {
         let viewController = WorkoutListViewController()
