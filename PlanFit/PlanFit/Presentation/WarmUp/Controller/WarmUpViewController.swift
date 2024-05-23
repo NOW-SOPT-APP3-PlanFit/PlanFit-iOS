@@ -72,7 +72,8 @@ private extension WarmUpViewController {
         timer = nil
     }
     
-    @objc func updateTimer() {
+    @objc 
+    func updateTimer() {
         if remainingTime > 0 {
             remainingTime -= 1
             updateUIForRemainingTime()
