@@ -105,6 +105,35 @@ private extension WorkoutListViewController {
         
         workoutDataList = temp
     }
+    
+    func update() {
+        var updateExercises: [Exercises] = []
+        
+        for case let .additional(model) in workoutDataList {
+            let exercise = Exercises(id: model.id, index: updateExercises.count)
+            updateExercises.append(exercise)
+        }
+        
+        let requestModel = WorkoutListRequestModel(exercises: updateExercises)
+        
+        WorkoutService.shared.request(for: .changeWorkoutList(request: requestModel)) { result in
+            switch result {
+            case .success(let responseModel):
+                guard let model = responseModel as? WorkoutListResponseModel else { return }
+                print(model)
+            case .requestErr:
+                print("요청 오류 입니다")
+            case .decodedErr:
+                print("디코딩 오류 입니다")
+            case .pathErr:
+                print("경로 오류 입니다")
+            case .serverErr:
+                print("서버 오류입니다")
+            case .networkFail:
+                print("네트워크 오류입니다")
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -145,6 +174,7 @@ extension WorkoutListViewController: UITableViewDataSource {
             cell.hideHamburgerButton()
         case .additional(let model):
             cell.dataBind(model)
+            cell.showHamburgerButton()
         }
         
         return cell
@@ -166,6 +196,8 @@ extension WorkoutListViewController: UITableViewDataSource {
         let moveCell = self.workoutDataList[sourceIndexPath.row]
         self.workoutDataList.remove(at: sourceIndexPath.row)
         self.workoutDataList.insert(moveCell, at: destinationIndexPath.row)
+        
+        update()
     }
 }
 

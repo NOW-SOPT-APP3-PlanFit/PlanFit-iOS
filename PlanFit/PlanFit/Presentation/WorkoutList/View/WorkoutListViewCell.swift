@@ -66,6 +66,10 @@ final class WorkoutListViewCell: UITableViewCell, ReuseIdentifiable {
         hamburgerButton.isHidden = true
     }
     
+    func showHamburgerButton() {
+        hamburgerButton.isHidden = false
+    }
+    
     @objc
     private func arrowButtonDidTap() {
         updateForExpansion()
