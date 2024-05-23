@@ -9,17 +9,21 @@ import UIKit
 
 import SnapKit
 
-class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
+protocol HeartButtonDidTapDelegate: AnyObject {
+    func updateHeart(_ heartButton: UIButton, isFilled: Bool)
+}
+
+final class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - UI Component
+    
+    let heartButton = UIButton()
     
     private let workoutOrderLabel = UILabel()
     
     private let workoutOrderView = UIView()
     
     private let currentWorkout = UILabel()
-    
-    private let heartButton = UIButton()
     
     private let nextWorkoutLabel = UILabel()
     
@@ -29,6 +33,12 @@ class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
     
     private let nextWorkoutStackView = UIStackView()
     
+    // MARK: - Property
+    
+    var heartIsFilled = false
+    
+    weak var delegate: HeartButtonDidTapDelegate?
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -37,6 +47,7 @@ class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
         setUI()
         setViewHierarchy()
         setAutoLayout()
+        setTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -57,7 +68,7 @@ private extension WorkoutImageHeader {
         
         currentWorkout.do { $0.setText("랫 풀다운", font: .head04, color: .gray01) }
         
-        heartButton.do { $0.setImage(UIImage(resource: .heartFill), for: .normal) }
+        heartButton.do { $0.setImage(UIImage(resource: .heartEmpty), for: .normal) }
         
         nextWorkoutLabel.do { $0.setText("다음 운동", font: .caption02, color: .gray02) }
         
@@ -105,5 +116,19 @@ private extension WorkoutImageHeader {
         }
         
         nextWorkoutStackView.snp.makeConstraints { $0.trailing.bottom.equalToSuperview() }
+    }
+    
+    // MARK: - Action
+    
+    func setTarget() {
+        heartButton.addTarget(self, action: #selector(heartButtonDidTap), for: .touchUpInside)
+    }
+    
+    @objc
+    func heartButtonDidTap(_ sender: UIButton) {
+        delegate?.updateHeart(sender, isFilled: heartIsFilled)
+        
+        heartIsFilled.toggle()
+        heartButton.setImage(heartIsFilled ? .heartFill : .heartEmpty, for: .normal)
     }
 }
