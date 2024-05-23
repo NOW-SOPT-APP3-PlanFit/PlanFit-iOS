@@ -18,94 +18,13 @@ final class WorkoutService {
 
 extension WorkoutService {
     
-    // MARK: - Home
+    // MARK: - API request
     
-    func getPlanOptions(completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.getPlanOptions) { [weak self] result in
+    func request(for target: WorkoutTargetType, completion: @escaping (NetworkResult<Any>) -> Void) {
+        workoutProvider.request(target) { [weak self] result in
             guard let self else { return }
             self.completionMethod(
-                responseModel: PlanOptionsResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    func changePlanOptions(request: PlanOptionsRequestModel, completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.changePlanOptions(request: request)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    // MARK: - WorkoutList
-    
-    func getWorkoutList(completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.getWorkoutList) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: WorkoutListResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    func changeWorkoutList(request: WorkoutListRequestModel, completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.changeWorkoutList(request: request)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    // MARK: - Workout
-    
-    func addSet(exerciseId: Int, completion: @escaping (NetworkResult<Any>) -> Void ) {
-        workoutProvider.request(.addSet(exerciseId: exerciseId)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    func completeSet(exerciseId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.completeSet(exerciseId: exerciseId)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    func likeHeart(exerciseId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.likeHeart(exerciseId: exerciseId)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
-                result: result,
-                completion: completion
-            )
-        }
-    }
-    
-    func unlikeHeart(exerciseId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
-        workoutProvider.request(.unlikeHeart(exerciseId: exerciseId)) { [weak self] result in
-            guard let self else { return }
-            self.completionMethod(
-                responseModel: GeneralResponseModel.self,
+                responseModel: target.responseModel,
                 result: result,
                 completion: completion
             )

@@ -83,3 +83,26 @@ extension WorkoutTargetType: TargetType {
         }
     }
 }
+
+extension WorkoutTargetType {
+    var responseModel: Codable.Type {
+        switch self {
+        case .getPlanOptions:
+            PlanOptionsResponseModel.self
+        case .changePlanOptions:
+            GeneralResponseModel.self
+        case .getWorkoutList:
+            WorkoutListResponseModel.self
+        case .changeWorkoutList:
+            GeneralResponseModel.self
+        case .addSet:
+            GeneralResponseModel.self
+        case .completeSet:
+            GeneralResponseModel.self
+        case .likeHeart:
+            GeneralResponseModel.self
+        case .unlikeHeart:
+            GeneralResponseModel.self
+        }
+    }
+}
