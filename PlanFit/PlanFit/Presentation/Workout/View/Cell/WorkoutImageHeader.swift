@@ -17,13 +17,13 @@ final class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - UI Component
     
-    let heartButton = UIButton()
-    
     private let workoutOrderLabel = UILabel()
     
     private let workoutOrderView = UIView()
     
     private let currentWorkout = UILabel()
+    
+    private let heartButton = UIButton()
     
     private let nextWorkoutLabel = UILabel()
     
@@ -35,9 +35,9 @@ final class WorkoutImageHeader: UICollectionReusableView, ReuseIdentifiable {
     
     // MARK: - Property
     
-    var heartIsFilled = false
-    
     weak var delegate: HeartButtonDidTapDelegate?
+    
+    private var heartIsFilled = false
     
     // MARK: - Initializer
     
