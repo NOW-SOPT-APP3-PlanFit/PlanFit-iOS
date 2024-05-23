@@ -15,7 +15,7 @@ class WorkoutViewController: UIViewController {
         case WorkOutImage, SetVolume
     }
     
-    // MARK: - Propertity
+    // MARK: - Property
     
     private let rootView = WorkoutView()
     
@@ -80,15 +80,7 @@ class WorkoutViewController: UIViewController {
     
     @objc
     private func stopwatchViewDidTap() {
-        if stopwatchIsRunning {
-            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .noOnairDot)
-            stopwatchView.currentTimePlayImage.image = UIImage(resource: .play)
-            stopwatchIsRunning = false
-        } else {
-            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .onairDot)
-            stopwatchView.currentTimePlayImage.image = UIImage(resource: .pause)
-            stopwatchIsRunning = true
-        }
+        stopwatchView.isRunning.toggle()
     }
     
     // MARK: - CollectionView Setting

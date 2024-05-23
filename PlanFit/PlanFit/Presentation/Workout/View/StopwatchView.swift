@@ -17,6 +17,15 @@ class StopwatchView: UIView {
     
     private let currentTimeLabel = UILabel()
     
+    // MARK: - Property
+
+    var isRunning: Bool = false {
+        didSet {
+            currentTimeOnAirDot.image = isRunning ? .noOnairDot : .onairDot
+            currentTimePlayImage.image = isRunning ? .play : .pause
+        }
+    }
+    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
