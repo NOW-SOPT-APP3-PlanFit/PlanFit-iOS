@@ -8,7 +8,12 @@
 import Foundation
 
 enum WorkoutTimeModel: CaseIterable {
-    case short, littleShort, normal, littleLong, long, veryLong
+    case short
+    case littleShort
+    case normal
+    case littleLong
+    case long
+    case veryLong
 }
 
 extension WorkoutTimeModel {
@@ -42,6 +47,20 @@ extension WorkoutTimeModel {
         case .littleLong: 73
         case .long: 87
         case .veryLong: 116
+        }
+    }
+}
+
+extension WorkoutTimeModel {
+    static func convert(from minute: Int) -> WorkoutTimeModel {
+        switch minute {
+        case 29: .short
+        case 44: .littleShort
+        case 58: .normal
+        case 73: .littleLong
+        case 87: .long
+        case 116: .veryLong
+        default: .normal
         }
     }
 }
