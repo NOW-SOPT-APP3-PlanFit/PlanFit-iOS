@@ -15,7 +15,7 @@ class WorkoutViewController: UIViewController {
         case WorkOutImage, SetVolume
     }
     
-    // MARK: - Propertity
+    // MARK: - Property
     
     private let rootView = WorkoutView()
     
@@ -52,11 +52,19 @@ class WorkoutViewController: UIViewController {
     // MARK: - NavigationBar Setting
     
     private func setNavigationBar() {
+        let backButton = UIBarButtonItem(
+            image: .arrowLeft.withRenderingMode(.alwaysOriginal),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonDidTap)
+        )
+        
         let headphoneImage = UIImage(resource: .headphone).withRenderingMode(.alwaysOriginal)
         let ellipsisImage = UIImage(resource: .ellipsis).withRenderingMode(.alwaysOriginal)
         let headphoneItem = UIBarButtonItem(image: headphoneImage, style: .plain, target: self, action: nil)
         let ellipsisItem = UIBarButtonItem(image: ellipsisImage, style: .plain, target: self, action: nil)
         
+        navigationItem.leftBarButtonItem = backButton
         navigationItem.titleView = stopwatchView
         navigationItem.rightBarButtonItems = [ellipsisItem, headphoneItem]
         
@@ -80,15 +88,7 @@ class WorkoutViewController: UIViewController {
     
     @objc
     private func stopwatchViewDidTap() {
-        if stopwatchIsRunning {
-            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .noOnairDot)
-            stopwatchView.currentTimePlayImage.image = UIImage(resource: .play)
-            stopwatchIsRunning = false
-        } else {
-            stopwatchView.currentTimeOnAirDot.image = UIImage(resource: .onairDot)
-            stopwatchView.currentTimePlayImage.image = UIImage(resource: .pause)
-            stopwatchIsRunning = true
-        }
+        stopwatchView.isRunning.toggle()
     }
     
     // MARK: - CollectionView Setting
@@ -282,6 +282,11 @@ class WorkoutViewController: UIViewController {
     }
     
     // MARK: - Action
+    
+    @objc
+    private func backButtonDidTap(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     
     @objc
     private func addSetDidtap() {
