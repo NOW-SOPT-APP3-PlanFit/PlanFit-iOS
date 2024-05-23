@@ -13,15 +13,15 @@ final class ExerciseRootView: UIView {
     
     // MARK: - UIComponent
     
+    let startExerciseBannerView = StartExerciseBannerView()
+    
+    let exerciseInfoBannerView = ExerciseInfoBannerView()
+    
     private let goalBannerView = GoalBannerView()
     
     private let recommendPlanButton = UIButton()
     
-    let startExerciseBannerView = StartExerciseBannerView()
-    
     private let lineImageView = UIImageView()
-    
-    let exerciseInfoBannerView = ExerciseInfoBannerView()
     
     private let aiButton = UIButton()
     

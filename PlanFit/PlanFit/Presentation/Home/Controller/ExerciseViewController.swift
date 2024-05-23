@@ -54,37 +54,56 @@ final class ExerciseViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBar()
         setTarget()
+        fetchPlanOptions()
     }
-    
-    // MARK: - Action
-    
-    @objc
-    private func minutesDropDownButtonDidTap(_ sender: UIButton) {
-        let viewController = WorkoutTimeSheetViewController(delegate: self, choice: timeChoice)
-        viewController.modalPresentationStyle = .formSheet
-        if let sheet = viewController.sheetPresentationController {
-            sheet.detents = [.large(), .medium()]
-            sheet.prefersGrabberVisible = true
-            sheet.preferredCornerRadius = 30
+}
+
+// MARK: - Network
+
+private extension ExerciseViewController {
+    func fetchPlanOptions() {
+        WorkoutService.shared.request(for: .getPlanOptions) { [weak self] result in
+            switch result {
+            case .success(let responseModel):
+                guard let model = responseModel as? PlanOptionsResponseModel else { return }
+                let data = model.data
+                DispatchQueue.main.async {
+                    self?.configureDropDowns(data.round, data.minute, data.condition)
+                }
+            case .requestErr:
+                print(">>> 요청 오류 : \(#function)")
+            case .decodedErr:
+                print(">>> 디코딩 오류 : \(#function)")
+            case .pathErr:
+                print(">>> 경로 오류 : \(#function)")
+            case .serverErr:
+                print(">>> 서버 오류 : \(#function)")
+            case .networkFail:
+                print(">>> 네트워크 실패 : \(#function)")
+            }
         }
-        present(viewController, animated: true)
     }
     
-    @objc
-    private func conditionsDropDownButtonDidTap(_ sender: UIButton) {
-        let viewController = BodyConditionSheetViewController(delegate: self, choice: conditionChoice)
-        viewController.modalPresentationStyle = .formSheet
-        if let sheet = viewController.sheetPresentationController {
-            sheet.detents = [.large(), .medium()]
-            sheet.prefersGrabberVisible = true
-            sheet.preferredCornerRadius = 30
+    func updatePlanOptions() {
+        let requestModel = PlanOptionsRequestModel(minute: timeChoice.timeValue, condition: conditionChoice.value)
+        
+        WorkoutService.shared.request(for: .changePlanOptions(request: requestModel)) { result in
+            switch result {
+            case .success(let responseModel):
+                guard let model = responseModel as? PlanOptionsResponseModel else { return }
+                print(model)
+            case .requestErr:
+                print(">>> 요청 오류 : \(#function)")
+            case .decodedErr:
+                print(">>> 디코딩 오류 : \(#function)")
+            case .pathErr:
+                print(">>> 경로 오류 : \(#function)")
+            case .serverErr:
+                print(">>> 서버 오류 : \(#function)")
+            case .networkFail:
+                print(">>> 네트워크 실패 : \(#function)")
+            }
         }
-        present(viewController, animated: true)
-    }
-    
-    @objc
-    private func startExerciseButtonDidTap(_ sender: UIButton) {
-        delegate?.moveToWorkoutList()
     }
 }
 
@@ -94,6 +113,7 @@ extension ExerciseViewController: WorkoutTimeSheetViewDelegate {
     func dataBind(time userChoice: WorkoutTimeModel) {
         guard userChoice != timeChoice else { return }
         timeChoice = userChoice
+        updatePlanOptions()
     }
 }
 
@@ -106,9 +126,19 @@ extension ExerciseViewController: BodyConditionSheetViewDelegate {
     }
 }
 
-// MARK: - ConfigureDropDown
+// MARK: - Configure DropDown
 
 private extension ExerciseViewController {
+    func configureDropDowns(_ round: Int, _ minute: Int, _ condition: String) {
+        let sessionButton = rootView.startExerciseBannerView.sessionsDropDownButton
+        sessionButton.setTitle("\(round)회차", font: .subtitle02B, titleColor: .mainGreen)
+        
+        timeChoice = WorkoutTimeModel.convert(from: minute)
+        
+        configureTimeDropDown("\(minute)분")
+        configureConditionDropDown(condition)
+    }
+    
     func configureTimeDropDown(_ title: String) {
         let timeDropDownButton = rootView.startExerciseBannerView.timeDropDownButton
         timeDropDownButton.setTitle(title, font: .subtitle02B, titleColor: .mainGreen)
@@ -120,7 +150,7 @@ private extension ExerciseViewController {
     }
 }
 
-// MARK: - UISetting
+// MARK: - UI Setting
 
 private extension ExerciseViewController {
     func setNavigationBar() {
@@ -184,5 +214,36 @@ private extension ExerciseViewController {
             action: #selector(startExerciseButtonDidTap),
             for: .touchUpInside
         )
+    }
+    
+    // MARK: - Action
+    
+    @objc
+    func minutesDropDownButtonDidTap(_ sender: UIButton) {
+        let viewController = WorkoutTimeSheetViewController(delegate: self, choice: timeChoice)
+        viewController.modalPresentationStyle = .formSheet
+        if let sheet = viewController.sheetPresentationController {
+            sheet.detents = [.large(), .medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.preferredCornerRadius = 30
+        }
+        present(viewController, animated: true)
+    }
+    
+    @objc
+    func conditionsDropDownButtonDidTap(_ sender: UIButton) {
+        let viewController = BodyConditionSheetViewController(delegate: self, choice: conditionChoice)
+        viewController.modalPresentationStyle = .formSheet
+        if let sheet = viewController.sheetPresentationController {
+            sheet.detents = [.large(), .medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.preferredCornerRadius = 30
+        }
+        present(viewController, animated: true)
+    }
+    
+    @objc
+    func startExerciseButtonDidTap(_ sender: UIButton) {
+        delegate?.moveToWorkoutList()
     }
 }
