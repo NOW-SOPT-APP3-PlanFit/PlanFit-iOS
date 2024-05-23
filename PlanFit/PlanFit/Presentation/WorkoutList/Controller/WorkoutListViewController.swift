@@ -36,7 +36,7 @@ final class WorkoutListViewController: UIViewController {
     
     private func register() {
         rootView.tableView.register(
-            WorkoutListViewCell.self, forCellReuseIdentifier: WorkoutListViewCell.identifier
+            WorkoutListViewCell.self, forCellReuseIdentifier: WorkoutListViewCell.reuseIdentifier
         )
     }
     
@@ -75,7 +75,7 @@ extension WorkoutListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = rootView.tableView.dequeueReusableCell(
-            withIdentifier: WorkoutListViewCell.identifier,for: indexPath
+            withIdentifier: WorkoutListViewCell.reuseIdentifier,for: indexPath
         ) as? WorkoutListViewCell else {
             return UITableViewCell()
         }

@@ -66,7 +66,7 @@ private extension WorkoutListView {
     }
     
     func setViewHierarchy() {
-        self.addSubviews(navigationBar, tableView, buttonBackGradiant, startButton)
+        addSubviews(navigationBar, tableView, buttonBackGradiant, startButton)
     }
     
     func setAutoLayout() {

@@ -9,11 +9,9 @@ import UIKit
 
 import SnapKit
 
-final class WorkoutListViewCell: UITableViewCell {
+final class WorkoutListViewCell: UITableViewCell, ReuseIdentifiable {
     
     // MARK: - Property
-    
-    static let identifier = "WorkoutListViewCell"
     
     var isExpanded = false
     
@@ -21,7 +19,7 @@ final class WorkoutListViewCell: UITableViewCell {
     
     // MARK: - UIComponent
     
-    private lazy var hamburgerButton = UIButton()
+    private let hamburgerButton = UIButton()
     
     private let workoutImage = UIImageView()
     
@@ -29,9 +27,9 @@ final class WorkoutListViewCell: UITableViewCell {
     
     private let captionLabel = UILabel()
     
-    private lazy var additionalInfoLabel = UILabel()
+    private let additionalInfoLabel = UILabel()
     
-    private lazy var arrowButton = UIButton()
+    private let arrowButton = UIButton()
     
     // MARK: - Initializer
     
@@ -60,13 +58,8 @@ final class WorkoutListViewCell: UITableViewCell {
     
     private func updateForExpansion() {
         isExpanded.toggle()
-        if isExpanded {
-            arrowButton.setImage(UIImage.arrowTop, for: .normal)
-            additionalInfoLabel.isHidden = false
-        } else {
-            arrowButton.setImage(UIImage.arrowDown, for: .normal)
-            additionalInfoLabel.isHidden = true
-        }
+        additionalInfoLabel.isHidden = !isExpanded
+        arrowButton.setImage(isExpanded ? .arrowTop : .arrowDown, for: .normal)
     }
     
     func hideHamburgerButton() {
@@ -107,6 +100,7 @@ private extension WorkoutListViewCell {
             $0.textAlignment = .left
             $0.numberOfLines = 6
             $0.font = UIFont.neoFont(for: .caption02)
+            $0.isHidden = true
         }
     }
     
@@ -143,7 +137,8 @@ private extension WorkoutListViewCell {
         }
         additionalInfoLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(88)
-            $0.bottom.lessThanOrEqualToSuperview().offset(-8)
+            //$0.bottom.lessThanOrEqualToSuperview().offset(-8)
+            $0.bottom.equalToSuperview().offset(-8).priority(.low)
             $0.leading.equalToSuperview().offset(124)
         }
         arrowButton.snp.makeConstraints {
@@ -158,10 +153,10 @@ private extension WorkoutListViewCell {
 
 extension WorkoutListViewCell {
     func dataBind (_ data: WorkoutListModel) {
-        nameLabel.text = data.nameLabel
+        nameLabel.text = data.name
         workoutImage.image = data.workoutImage
-        captionLabel.text = data.captionLabel
-        arrowButton.setImage(data.arrowButton, for: .normal)
-        additionalInfoLabel.text = data.additionalInfoLabel
+        captionLabel.text = data.caption
+        arrowButton.setImage(data.arrowImage, for: .normal)
+        additionalInfoLabel.text = data.additionalInfo
     }
 }
