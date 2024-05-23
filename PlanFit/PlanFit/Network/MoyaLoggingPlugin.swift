@@ -12,6 +12,7 @@ import Moya
 final class MoyaLoggingPlugin: PluginType {
 
     // MARK: - Request 보낼 시 호출
+    
     func willSend(_ request: RequestType, target: TargetType) {
         guard let httpRequest = request.request else {
             print("--> 유효하지 않은 요청")

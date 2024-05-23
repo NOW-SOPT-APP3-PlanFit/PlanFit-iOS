@@ -17,6 +17,9 @@ final class WorkoutService {
 }
 
 extension WorkoutService {
+    
+    // MARK: - Home
+    
     func getPlanOptions(completion: @escaping (NetworkResult<Any>) -> Void) {
         workoutProvider.request(.getPlanOptions) { [weak self] result in
             guard let self else { return }
@@ -39,6 +42,8 @@ extension WorkoutService {
         }
     }
     
+    // MARK: - WorkoutList
+    
     func getWorkoutList(completion: @escaping (NetworkResult<Any>) -> Void) {
         workoutProvider.request(.getWorkoutList) { [weak self] result in
             guard let self else { return }
@@ -60,6 +65,8 @@ extension WorkoutService {
             )
         }
     }
+    
+    // MARK: - Workout
     
     func addSet(exerciseId: Int, completion: @escaping (NetworkResult<Any>) -> Void ) {
         workoutProvider.request(.addSet(exerciseId: exerciseId)) { [weak self] result in
@@ -105,6 +112,8 @@ extension WorkoutService {
         }
     }
     
+    // MARK: - Completion
+    
     func completionMethod<T: Codable>(
         responseModel: T.Type,
         result: Result<Response, MoyaError>,
@@ -122,8 +131,9 @@ extension WorkoutService {
         }
     }
     
+    // MARK: - Status Method
+    
     public func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data, _ object: T.Type) -> NetworkResult<Any> {
-        
         switch statusCode {
         case 200..<205:
             return isValidData(data: data, T.self)
@@ -142,9 +152,7 @@ extension WorkoutService {
         guard let decodedData = try? decoder.decode(T.self, from: data) else {
             print("⛔️ \(self)애서 디코딩 오류가 발생했습니다 ⛔️")
             return .decodedErr
-            
         }
-        
         return .success(decodedData as Any)
     }
 }
