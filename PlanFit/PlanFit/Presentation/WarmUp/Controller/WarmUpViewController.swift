@@ -39,6 +39,12 @@ final class WarmUpViewController: UIViewController {
         
         startTimer(for: duration)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopTimer()
+    }
 }
 
 // MARK: - Timer
@@ -46,8 +52,10 @@ final class WarmUpViewController: UIViewController {
 private extension WarmUpViewController {
     func startTimer(for time: Int) {
         remainingTime = time
-        updateUIForRemainingTime()
+        
         rootView.pauseButton.isPlaying = true
+        updateUIForRemainingTime()
+        
         timer = Timer.scheduledTimer(
             timeInterval: 1,
             target: self,
@@ -58,6 +66,8 @@ private extension WarmUpViewController {
     }
     
     func stopTimer() {
+        rootView.pauseButton.isPlaying = false
+        
         timer?.invalidate()
         timer = nil
     }
