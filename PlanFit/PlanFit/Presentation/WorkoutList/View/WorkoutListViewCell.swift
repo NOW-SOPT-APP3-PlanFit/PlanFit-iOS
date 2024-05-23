@@ -59,7 +59,7 @@ final class WorkoutListViewCell: UITableViewCell, ReuseIdentifiable {
     private func updateForExpansion() {
         isExpanded.toggle()
         additionalInfoLabel.isHidden = !isExpanded
-        arrowButton.setImage(isExpanded ? UIImage.arrowTop : UIImage.arrowDown, for: .normal)
+        arrowButton.setImage(isExpanded ? .arrowTop : .arrowDown, for: .normal)
     }
     
     func hideHamburgerButton() {
@@ -155,8 +155,8 @@ extension WorkoutListViewCell {
     func dataBind (_ data: WorkoutListModel) {
         nameLabel.text = data.name
         workoutImage.image = data.workoutImage
-        captionLabel.text = data.captionLabel
-        arrowButton.setImage(data.arrowButton, for: .normal)
-        additionalInfoLabel.text = data.additionalInfoLabel
+        captionLabel.text = data.caption
+        arrowButton.setImage(data.arrowImage, for: .normal)
+        additionalInfoLabel.text = data.additionalInfo
     }
 }

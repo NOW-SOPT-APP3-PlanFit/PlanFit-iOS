@@ -54,7 +54,6 @@ final class WorkoutListViewController: UIViewController {
 // MARK: - UITableViewDelegate
 
 extension WorkoutListViewController: UITableViewDelegate {
-    //test
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 || indexPath.row == (tableView.numberOfRows(inSection: indexPath.section) - 1) {
             if let cell = rootView.tableView.cellForRow(at: indexPath) as? WorkoutListViewCell {
