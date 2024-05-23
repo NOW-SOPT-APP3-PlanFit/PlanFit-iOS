@@ -323,6 +323,8 @@ class WorkoutViewController: UIViewController {
         }
         setVolumeList[currentSet.item].state = .inProgress
         nextCell.currentSetAttributes()
+        
+        completeSetAPI()
     }
     
     private func setCompletedSetNum(_ completedSet: Int?) {
@@ -340,5 +342,25 @@ class WorkoutViewController: UIViewController {
             font: .subtitle01,
             titleColor: .gray10
         )
+    }
+    
+    private func completeSetAPI() {
+        WorkoutService.shared.request(for: .completeSet(exerciseId: 1)) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? GeneralResponseModel else { return }
+                print(data.message)
+            case .requestErr:
+                print("요청 오류 입니다")
+            case .decodedErr:
+                print("디코딩 오류 입니다")
+            case .pathErr:
+                print("경로 오류 입니다")
+            case .serverErr:
+                print("서버 오류입니다")
+            case .networkFail:
+                print("네트워크 오류입니다")
+            }
+        }
     }
 }
