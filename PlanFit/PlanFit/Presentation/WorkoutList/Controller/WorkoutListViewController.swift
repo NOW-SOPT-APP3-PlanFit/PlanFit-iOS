@@ -11,11 +11,24 @@ import SnapKit
 
 final class WorkoutListViewController: UIViewController {
     
+    // MARK: - WorkoutKind
+
+    private enum WorkoutKind {
+        case base(model: WorkoutListModel)
+        case additional(model: WorkoutListExercises)
+    }
+    
     // MARK: - Property
     
     private let rootView = WorkoutListView()
     
-    private var workoutList = WorkoutListModel.dummy()
+    private var workoutDataList: [WorkoutKind] = [] {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.rootView.tableView.reloadData()
+            }
+        }
+    }
     
     // MARK: - LifeCycle
     
@@ -30,6 +43,13 @@ final class WorkoutListViewController: UIViewController {
         setDelegate()
         setDraggable()
         setTarget()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        
+        fetch()
     }
     
     // MARK: - TableView Setting
@@ -48,6 +68,72 @@ final class WorkoutListViewController: UIViewController {
     private func setDraggable() {
         self.rootView.tableView.dragInteractionEnabled = true
         self.rootView.tableView.dragDelegate = self
+    }
+}
+
+// MARK: - Network
+
+private extension WorkoutListViewController {
+    
+    func fetch() {
+        WorkoutService.shared.request(for: .getWorkoutList) { [weak self] response in
+            switch response {
+            case .success(let responseModel):
+                guard let model = responseModel as? WorkoutListResponseModel else { return }
+                self?.configureList(workoutList: model.data)
+            case .requestErr:
+                print("요청 오류 입니다")
+            case .decodedErr:
+                print("디코딩 오류 입니다")
+            case .pathErr:
+                print("경로 오류 입니다")
+            case .serverErr:
+                print("서버 오류입니다")
+            case .networkFail:
+                print("네트워크 오류입니다")
+            }
+        }
+    }
+    
+    func configureList(workoutList: WorkoutList) {
+        var temp: [WorkoutKind] = [.base(model: .createDummy(for: .warmup))]
+        
+        for exercise in workoutList.exercises {
+            temp.append(.additional(model: exercise))
+        }
+        
+        temp.append(.base(model: .createDummy(for: .cooldown)))
+        
+        workoutDataList = temp
+    }
+    
+    func update() {
+        var exercises: [Exercises] = []
+        
+        for case let .additional(model) in workoutDataList {
+            let exercise = Exercises(id: model.id, index: exercises.count)
+            exercises.append(exercise)
+        }
+        
+        let requestModel = WorkoutListRequestModel(exercises: exercises)
+        
+        WorkoutService.shared.request(for: .changeWorkoutList(request: requestModel)) { result in
+            switch result {
+            case .success(let responseModel):
+                guard let model = responseModel as? WorkoutListResponseModel else { return }
+                print(model)
+            case .requestErr:
+                print("요청 오류 입니다")
+            case .decodedErr:
+                print("디코딩 오류 입니다")
+            case .pathErr:
+                print("경로 오류 입니다")
+            case .serverErr:
+                print("서버 오류입니다")
+            case .networkFail:
+                print("네트워크 오류입니다")
+            }
+        }
     }
 }
 
@@ -70,7 +156,7 @@ extension WorkoutListViewController: UITableViewDelegate {
 
 extension WorkoutListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workoutList.count
+        return workoutDataList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,31 +166,39 @@ extension WorkoutListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.selectionStyle = .none
-        cell.dataBind(workoutList[indexPath.row])
         
-        if indexPath.row == 0 || indexPath.row == workoutList.count - 1 {
+        let kind = workoutDataList[indexPath.row]
+        
+        switch kind {
+        case .base(let model):
+            cell.dataBind(model)
             cell.hideHamburgerButton()
+        case .additional(let model):
+            cell.dataBind(model)
+            cell.showHamburgerButton()
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.row != 0 && indexPath.row != workoutList.count - 1
+        return indexPath.row != 0 && indexPath.row != workoutDataList.count - 1
     }
     
     func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, 
                    toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
-        if proposedDestinationIndexPath.row == 0 || proposedDestinationIndexPath.row == workoutList.count - 1 {
+        if proposedDestinationIndexPath.row == 0 || proposedDestinationIndexPath.row == workoutDataList.count - 1 {
             return sourceIndexPath
         }
         return proposedDestinationIndexPath
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let moveCell = self.workoutList[sourceIndexPath.row]
-        self.workoutList.remove(at: sourceIndexPath.row)
-        self.workoutList.insert(moveCell, at: destinationIndexPath.row)
+        let moveCell = self.workoutDataList[sourceIndexPath.row]
+        self.workoutDataList.remove(at: sourceIndexPath.row)
+        self.workoutDataList.insert(moveCell, at: destinationIndexPath.row)
+        
+        update()
     }
 }
 
@@ -113,7 +207,7 @@ extension WorkoutListViewController: UITableViewDataSource {
 extension WorkoutListViewController: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath)
     -> [UIDragItem] {
-        if indexPath.row == 0 || indexPath.row == workoutList.count - 1 {
+        if indexPath.row == 0 || indexPath.row == workoutDataList.count - 1 {
             return []
         } else {
             return [UIDragItem(itemProvider: NSItemProvider())]
@@ -139,8 +233,8 @@ private extension WorkoutListViewController {
     
     @objc
     private func startButtonDidTap(_ sender: UIButton) {
-        
-        // TODO: 스트레칭 화면으로 네비게이션 Push
-        
+        let viewController = WarmUpViewController()
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

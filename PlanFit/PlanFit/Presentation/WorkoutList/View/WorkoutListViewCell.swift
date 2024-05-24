@@ -66,6 +66,10 @@ final class WorkoutListViewCell: UITableViewCell, ReuseIdentifiable {
         hamburgerButton.isHidden = true
     }
     
+    func showHamburgerButton() {
+        hamburgerButton.isHidden = false
+    }
+    
     @objc
     private func arrowButtonDidTap() {
         updateForExpansion()
@@ -137,7 +141,6 @@ private extension WorkoutListViewCell {
         }
         additionalInfoLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(88)
-            //$0.bottom.lessThanOrEqualToSuperview().offset(-8)
             $0.bottom.equalToSuperview().offset(-8).priority(.low)
             $0.leading.equalToSuperview().offset(124)
         }
@@ -152,11 +155,29 @@ private extension WorkoutListViewCell {
 // MARK: - Data Bind
 
 extension WorkoutListViewCell {
-    func dataBind (_ data: WorkoutListModel) {
+    func dataBind(_ data: WorkoutListModel) {
         nameLabel.text = data.name
         workoutImage.image = data.workoutImage
         captionLabel.text = data.caption
         arrowButton.setImage(data.arrowImage, for: .normal)
         additionalInfoLabel.text = data.additionalInfo
+    }
+    
+    func dataBind(_ data: WorkoutListExercises) {
+        nameLabel.text = data.name
+        workoutImage.image = configureImage(from: data.id)
+        captionLabel.text = "\(data.set)세트 X \(data.weight)kg X \(data.count)회"
+        arrowButton.setImage(.ellipsis, for: .normal)
+    }
+    
+    private func configureImage(from id: Int) -> UIImage {
+        switch id {
+        case 1: return .latpulldown
+        case 2: return .chestpress
+        case 3: return .dumbellraise
+        case 4: return .dumbelllunge
+        case 5: return .dumbellcurl
+        default: return .stretching
+        }
     }
 }
