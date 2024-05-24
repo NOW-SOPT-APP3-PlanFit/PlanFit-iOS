@@ -64,7 +64,7 @@ private extension StopwatchView {
         }
         
         currentTimeLabel.do {
-            $0.setText("00:00:00", font: .subtitle01, color: .gray01)
+            $0.setText(formattedTime(for: Self.workoutDuration), font: .subtitle01, color: .gray01)
             $0.textAlignment = .center
         }
         
