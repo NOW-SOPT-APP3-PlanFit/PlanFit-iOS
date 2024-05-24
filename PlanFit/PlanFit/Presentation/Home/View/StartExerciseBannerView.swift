@@ -13,13 +13,13 @@ final class StartExerciseBannerView: UIView {
     
     // MARK: - UIComponent
     
+    let sessionsDropDownButton = DropDownButton()
+    
     let timeDropDownButton = DropDownButton()
     
     let conditionsDropDownButton = DropDownButton()
     
     private let firstExplanationLabel = UILabel()
-    
-    private let sessionsDropDownButton = DropDownButton()
     
     private let secondExplanationLabel = UILabel()
     
