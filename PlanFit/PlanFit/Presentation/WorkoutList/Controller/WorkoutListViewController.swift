@@ -76,8 +76,8 @@ final class WorkoutListViewController: UIViewController {
 private extension WorkoutListViewController {
     
     func fetch() {
-        WorkoutService.shared.request(for: .getWorkoutList) {
-            [weak self] response in switch response {
+        WorkoutService.shared.request(for: .getWorkoutList) { [weak self] response in
+            switch response {
             case .success(let responseModel):
                 guard let model = responseModel as? WorkoutListResponseModel else { return }
                 self?.configureList(workoutList: model.data)
@@ -108,14 +108,14 @@ private extension WorkoutListViewController {
     }
     
     func update() {
-        var updateExercises: [Exercises] = []
+        var exercises: [Exercises] = []
         
         for case let .additional(model) in workoutDataList {
-            let exercise = Exercises(id: model.id, index: updateExercises.count)
-            updateExercises.append(exercise)
+            let exercise = Exercises(id: model.id, index: exercises.count)
+            exercises.append(exercise)
         }
         
-        let requestModel = WorkoutListRequestModel(exercises: updateExercises)
+        let requestModel = WorkoutListRequestModel(exercises: exercises)
         
         WorkoutService.shared.request(for: .changeWorkoutList(request: requestModel)) { result in
             switch result {
