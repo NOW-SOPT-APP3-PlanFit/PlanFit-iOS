@@ -9,22 +9,29 @@ import UIKit
 
 class StopwatchView: UIView {
     
+    // MARK: - Type Property
+    
+    static var workoutDuration = 0
+    
     // MARK: - UI Component
     
     let currentTimeOnAirDot = UIImageView()
     
     let currentTimePlayImage = UIImageView()
     
-    private let currentTimeLabel = UILabel()
+    let currentTimeLabel = UILabel()
     
     // MARK: - Property
 
     var isRunning: Bool = false {
         didSet {
-            currentTimeOnAirDot.image = isRunning ? .noOnairDot : .onairDot
-            currentTimePlayImage.image = isRunning ? .play : .pause
+            currentTimeOnAirDot.image = isRunning ? .onairDot : .noOnairDot
+            currentTimePlayImage.image = isRunning ? .pause : .play
+            isRunning ? startTimer() : stopTimer()
         }
     }
+    
+    private var timer: Timer?
     
     // MARK: - Initializer
     
@@ -57,7 +64,7 @@ private extension StopwatchView {
         }
         
         currentTimeLabel.do {
-            $0.setText("00:00:37", font: .subtitle01, color: .gray01)
+            $0.setText("00:00:00", font: .subtitle01, color: .gray01)
         }
         
         currentTimePlayImage.do {
@@ -76,7 +83,7 @@ private extension StopwatchView {
         }
         
         currentTimeOnAirDot.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(8)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
@@ -88,9 +95,46 @@ private extension StopwatchView {
         
         currentTimePlayImage.snp.makeConstraints {
             $0.leading.equalTo(currentTimeLabel.snp.trailing).offset(1)
-            $0.trailing.equalToSuperview().offset(-11)
+            $0.trailing.equalToSuperview().offset(-9)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
+    }
+}
+
+// MARK: - Stopwatch
+
+private extension StopwatchView {
+    func startTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateTimer),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc
+    func updateTimer() {
+        StopwatchView.workoutDuration += 1
+        updateUIForRemainingTime()
+    }
+    
+    func updateUIForRemainingTime() {
+        let formattedTime = formattedTime(for: StopwatchView.workoutDuration)
+        currentTimeLabel.text = formattedTime
+    }
+    
+    func formattedTime(for time: Int) -> String {
+        let hours = time / 3600
+        let minutes = time >= 3600 ? ((time - (hours * 3600)) / 60) : (time / 60)
+        let seconds = time % 60
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }
