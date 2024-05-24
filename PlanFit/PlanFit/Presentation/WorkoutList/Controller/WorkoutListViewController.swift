@@ -232,8 +232,7 @@ private extension WorkoutListViewController {
     
     @objc
     private func startButtonDidTap(_ sender: UIButton) {
-        
-        // TODO: 스트레칭 화면으로 네비게이션 Push
-        
+        let viewController = WarmUpViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
