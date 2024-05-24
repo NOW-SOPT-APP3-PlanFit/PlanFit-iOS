@@ -35,14 +35,6 @@ class WorkoutViewController: UIViewController {
     
     private var currentSet = IndexPath(item: 0, section: 1)
     
-    private var timer: Timer?
-    
-    private var currentTime = 0 {
-        didSet {
-            
-        }
-    }
-    
     // MARK: - View Life Cycle
     
     override func loadView() {
@@ -97,42 +89,6 @@ class WorkoutViewController: UIViewController {
     @objc
     private func stopwatchViewDidTap() {
         stopwatchView.isRunning.toggle()
-        stopwatchView.isRunning ? startTimer() : stopTimer()
-    }
-    
-    // MARK: - Stopwatch
-    
-    private func startTimer() {
-        timer = Timer.scheduledTimer(
-            timeInterval: 1,
-            target: self,
-            selector: #selector(updateTimer),
-            userInfo: nil,
-            repeats: true
-        )
-    }
-    
-    func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-    
-    @objc
-    func updateTimer() {
-        currentTime += 1
-        updateUIForRemainingTime()
-    }
-    
-    func updateUIForRemainingTime() {
-        let formattedTime = formattedTime(for: currentTime)
-        stopwatchView.currentTimeLabel.text = formattedTime
-    }
-    
-    func formattedTime(for time: Int) -> String {
-        let hours = time / 3600
-        let minutes = time >= 3600 ? ((time - (hours * 3600)) / 60) : (time / 60)
-        let seconds = time % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
     // MARK: - CollectionView Setting

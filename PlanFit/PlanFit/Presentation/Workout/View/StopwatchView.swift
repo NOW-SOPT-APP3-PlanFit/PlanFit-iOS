@@ -23,9 +23,13 @@ class StopwatchView: UIView {
         didSet {
             currentTimeOnAirDot.image = isRunning ? .onairDot : .noOnairDot
             currentTimePlayImage.image = isRunning ? .pause : .play
-            print(isRunning)
+            isRunning ? startTimer() : stopTimer()
         }
     }
+    
+    private var timer: Timer?
+    
+    static var workoutDuration = 0
     
     // MARK: - Initializer
     
@@ -93,5 +97,42 @@ private extension StopwatchView {
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
+    }
+}
+
+// MARK: - Stopwatch
+
+private extension StopwatchView {
+    func startTimer() {
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateTimer),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc
+    func updateTimer() {
+        StopwatchView.workoutDuration += 1
+        updateUIForRemainingTime()
+    }
+    
+    func updateUIForRemainingTime() {
+        let formattedTime = formattedTime(for: StopwatchView.workoutDuration)
+        currentTimeLabel.text = formattedTime
+    }
+    
+    func formattedTime(for time: Int) -> String {
+        let hours = time / 3600
+        let minutes = time >= 3600 ? ((time - (hours * 3600)) / 60) : (time / 60)
+        let seconds = time % 60
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }
