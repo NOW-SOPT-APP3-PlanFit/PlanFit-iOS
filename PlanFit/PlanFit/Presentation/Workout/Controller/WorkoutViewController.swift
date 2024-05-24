@@ -393,13 +393,8 @@ class WorkoutViewController: UIViewController {
 
 extension WorkoutViewController: HeartButtonDidTapDelegate {
     func updateHeart(_ heartButton: UIButton, isFilled: Bool) {
-        if isFilled {
-            heartButton.setImage(.heartEmpty, for: .normal)
-            unlikeHeartAPI()
-        } else {
-            heartButton.setImage(.heartFill, for: .normal)
-            likeHeartAPI()
-        }
+        heartButton.setImage(isFilled ? .heartEmpty : .heartFill, for: .normal)
+        isFilled ? unlikeHeartAPI() : likeHeartAPI()
     }
     
     func likeHeartAPI() {
