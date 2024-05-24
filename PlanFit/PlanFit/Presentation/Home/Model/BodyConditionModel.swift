@@ -42,3 +42,16 @@ extension BodyConditionModel {
         }
     }
 }
+
+extension BodyConditionModel {
+    static func convert(from value: String) -> BodyConditionModel {
+        switch value {
+        case "최상": .better
+        case "보통": .normal
+        case "무거움": .heavy
+        case "피곤함": .tired
+        case "나쁨": .bad
+        default: .better
+        }
+    }
+}

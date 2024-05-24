@@ -23,13 +23,13 @@ final class ExerciseViewController: UIViewController {
     
     private var timeChoice = WorkoutTimeModel.normal {
         didSet {
-            configureTimeDropDown("\(timeChoice.timeValue)분")
+            setTitleTimeDropDown("\(timeChoice.timeValue)분")
         }
     }
     
     private var conditionChoice = BodyConditionModel.better {
         didSet {
-            configureConditionDropDown(conditionChoice.value)
+            setTitleConditionDropDown(conditionChoice.value)
         }
     }
     
@@ -90,8 +90,8 @@ private extension ExerciseViewController {
         WorkoutService.shared.request(for: .changePlanOptions(request: requestModel)) { result in
             switch result {
             case .success(let responseModel):
-                guard let model = responseModel as? PlanOptionsResponseModel else { return }
-                print(model)
+                guard let model = responseModel as? GeneralResponseModel else { return }
+                print(">>> \(model.message) : \(#function)")
             case .requestErr:
                 print(">>> 요청 오류 : \(#function)")
             case .decodedErr:
@@ -123,6 +123,7 @@ extension ExerciseViewController: BodyConditionSheetViewDelegate {
     func dataBind(condition userChoice: BodyConditionModel) {
         guard userChoice != conditionChoice else { return }
         conditionChoice = userChoice
+        updatePlanOptions()
     }
 }
 
@@ -133,18 +134,22 @@ private extension ExerciseViewController {
         let sessionButton = rootView.startExerciseBannerView.sessionsDropDownButton
         sessionButton.setTitle("\(round)회차", font: .subtitle02B, titleColor: .mainGreen)
         
-        timeChoice = WorkoutTimeModel.convert(from: minute)
-        
-        configureTimeDropDown("\(minute)분")
-        configureConditionDropDown(condition)
+        configureChoice(minute, condition)
+        setTitleTimeDropDown("\(minute)분")
+        setTitleConditionDropDown(condition)
     }
     
-    func configureTimeDropDown(_ title: String) {
+    func configureChoice(_ minute: Int, _ condition: String) {
+        timeChoice = .convert(from: minute)
+        conditionChoice = .convert(from: condition)
+    }
+    
+    func setTitleTimeDropDown(_ title: String) {
         let timeDropDownButton = rootView.startExerciseBannerView.timeDropDownButton
         timeDropDownButton.setTitle(title, font: .subtitle02B, titleColor: .mainGreen)
     }
     
-    func configureConditionDropDown(_ title: String) {
+    func setTitleConditionDropDown(_ title: String) {
         let conditionsDropDownButton = rootView.startExerciseBannerView.conditionsDropDownButton
         conditionsDropDownButton.setTitle(title, font: .subtitle02B, titleColor: .mainGreen)
     }
