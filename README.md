@@ -67,3 +67,12 @@
 ┃
 ┣ 📂 Network
 ```
+
+![5 Screenshot](https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/91656206/8306493f-5e18-4f76-99ba-e35b3457fa0f)   
+
+|메인 홈|운동 리스트|스트레칭|근력운동
+|:---:|:---:|:---:|:---:|
+|<img src="https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/91656206/5a1f80eb-1af5-4311-b039-8af91afe833f">|<img src="https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/91656206/cef7008b-e5c7-45a1-b28e-5dc674a44968">|<img src="https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/91656206/40c6d552-7e53-401f-93b9-53966ba05da9">|<img src="https://github.com/NOW-SOPT-APP3-PlanFit/PlanFit-iOS/assets/91656206/9d8e9ef3-68fd-4ba1-acf9-d2612698d409">|
+
+
+
