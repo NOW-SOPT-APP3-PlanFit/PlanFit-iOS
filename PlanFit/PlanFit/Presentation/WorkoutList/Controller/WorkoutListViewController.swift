@@ -233,6 +233,7 @@ private extension WorkoutListViewController {
     @objc
     private func startButtonDidTap(_ sender: UIButton) {
         let viewController = WarmUpViewController()
+        navigationController?.navigationBar.isHidden = false
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
