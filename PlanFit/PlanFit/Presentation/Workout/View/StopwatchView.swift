@@ -9,6 +9,10 @@ import UIKit
 
 class StopwatchView: UIView {
     
+    // MARK: - Type Property
+    
+    static var workoutDuration = 0
+    
     // MARK: - UI Component
     
     let currentTimeOnAirDot = UIImageView()
@@ -28,8 +32,6 @@ class StopwatchView: UIView {
     }
     
     private var timer: Timer?
-    
-    static var workoutDuration = 0
     
     // MARK: - Initializer
     
