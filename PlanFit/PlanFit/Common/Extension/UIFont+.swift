@@ -68,7 +68,7 @@ extension UIFont {
                 
             case .body01B, .body01: 0
                 
-            case .caption01: 3
+            case .caption01: -3
             case .caption02, .caption03: 0
             }
         }
