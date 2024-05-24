@@ -65,6 +65,7 @@ private extension StopwatchView {
         
         currentTimeLabel.do {
             $0.setText("00:00:00", font: .subtitle01, color: .gray01)
+            $0.textAlignment = .center
         }
         
         currentTimePlayImage.do {
@@ -127,7 +128,7 @@ private extension StopwatchView {
     }
     
     func updateUIForRemainingTime() {
-        let formattedTime = formattedTime(for: StopwatchView.workoutDuration)
+        let formattedTime = formattedTime(for: Self.workoutDuration)
         currentTimeLabel.text = formattedTime
     }
     
