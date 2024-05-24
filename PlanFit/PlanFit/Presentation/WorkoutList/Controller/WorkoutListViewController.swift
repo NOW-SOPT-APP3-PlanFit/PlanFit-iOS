@@ -11,18 +11,11 @@ import SnapKit
 
 final class WorkoutListViewController: UIViewController {
     
-    // MARK: - WorkoutKind
-
-    private enum WorkoutKind {
-        case base(model: WorkoutListModel)
-        case additional(model: WorkoutListExercises)
-    }
-    
     // MARK: - Property
     
     private let rootView = WorkoutListView()
     
-    private var workoutDataList: [WorkoutKind] = [] {
+    private var workoutDataList: [WorkoutKind] = WorkoutKind.dummy() {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.rootView.tableView.reloadData()
@@ -237,5 +230,56 @@ private extension WorkoutListViewController {
         let viewController = WarmUpViewController()
         navigationController?.navigationBar.isHidden = false
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - WorkoutKind
+
+private extension WorkoutListViewController {
+    enum WorkoutKind {
+        case base(model: WorkoutListModel)
+        case additional(model: WorkoutListExercises)
+        
+        static func dummy() -> [WorkoutKind] {
+            return [
+                .base(model: .createDummy(for: .warmup)),
+                .additional(model: WorkoutListExercises(
+                                    id: 1,
+                                    name: "렛 풀다운",
+                                    set: 4,
+                                    weight: 8,
+                                    count: 15,
+                                    index: 1)),
+                .additional(model: WorkoutListExercises(
+                                    id: 2,
+                                    name: "체스트 프레스 머신",
+                                    set: 4,
+                                    weight: 8,
+                                    count: 15,
+                                    index: 2)),
+                .additional(model: WorkoutListExercises(
+                                    id: 3,
+                                    name: "덤벨 레터럴 레이즈",
+                                    set: 4,
+                                    weight: 1,
+                                    count: 15,
+                                    index: 3)),
+                .additional(model: WorkoutListExercises(
+                                    id: 4,
+                                    name: "덤벨 런치",
+                                    set: 4,
+                                    weight: 1,
+                                    count: 15,
+                                    index: 4)),
+                .additional(model: WorkoutListExercises(
+                                    id: 5,
+                                    name: "덤벨 바이셉 컬",
+                                    set: 4,
+                                    weight: 1,
+                                    count: 15,
+                                    index: 5)),
+                .base(model: .createDummy(for: .cooldown))
+            ]
+        }
     }
 }
