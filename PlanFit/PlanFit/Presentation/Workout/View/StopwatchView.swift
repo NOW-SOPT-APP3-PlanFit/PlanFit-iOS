@@ -15,14 +15,15 @@ class StopwatchView: UIView {
     
     let currentTimePlayImage = UIImageView()
     
-    private let currentTimeLabel = UILabel()
+    let currentTimeLabel = UILabel()
     
     // MARK: - Property
 
     var isRunning: Bool = false {
         didSet {
-            currentTimeOnAirDot.image = isRunning ? .noOnairDot : .onairDot
-            currentTimePlayImage.image = isRunning ? .play : .pause
+            currentTimeOnAirDot.image = isRunning ? .onairDot : .noOnairDot
+            currentTimePlayImage.image = isRunning ? .pause : .play
+            print(isRunning)
         }
     }
     
@@ -57,7 +58,7 @@ private extension StopwatchView {
         }
         
         currentTimeLabel.do {
-            $0.setText("00:00:37", font: .subtitle01, color: .gray01)
+            $0.setText("00:00:00", font: .subtitle01, color: .gray01)
         }
         
         currentTimePlayImage.do {
@@ -76,7 +77,7 @@ private extension StopwatchView {
         }
         
         currentTimeOnAirDot.snp.makeConstraints {
-            $0.leading.equalToSuperview().offset(10)
+            $0.leading.equalToSuperview().offset(8)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
@@ -88,7 +89,7 @@ private extension StopwatchView {
         
         currentTimePlayImage.snp.makeConstraints {
             $0.leading.equalTo(currentTimeLabel.snp.trailing).offset(1)
-            $0.trailing.equalToSuperview().offset(-11)
+            $0.trailing.equalToSuperview().offset(-9)
             $0.centerY.equalToSuperview()
             $0.width.height.equalTo(16)
         }
