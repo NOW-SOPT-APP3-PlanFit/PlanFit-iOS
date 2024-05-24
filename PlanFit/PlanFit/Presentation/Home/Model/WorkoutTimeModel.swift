@@ -8,12 +8,7 @@
 import Foundation
 
 enum WorkoutTimeModel: CaseIterable {
-    case short
-    case littleShort
-    case normal
-    case littleLong
-    case long
-    case veryLong
+    case short, littleShort, normal, littleLong, long, veryLong
 }
 
 extension WorkoutTimeModel {
