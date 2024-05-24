@@ -40,10 +40,17 @@ final class WarmUpViewController: UIViewController {
         startTimer(for: duration)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        stopwatchView.isRunning = true
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         stopTimer()
+        stopwatchView.isRunning = false
     }
 }
 

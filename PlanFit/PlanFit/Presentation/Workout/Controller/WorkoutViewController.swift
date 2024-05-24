@@ -49,6 +49,18 @@ class WorkoutViewController: UIViewController {
         setCompleteSetBtn()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        stopwatchView.isRunning = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopwatchView.isRunning = false
+    }
+    
     // MARK: - NavigationBar Setting
     
     private func setNavigationBar() {
